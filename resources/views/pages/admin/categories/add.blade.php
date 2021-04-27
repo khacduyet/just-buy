@@ -10,14 +10,13 @@
           <div class="col-sm-6">
             <!-- <h1>Thêm danh mục</h1> -->
             <section class="content-header">
-              <h5>Thêm danh mục</h5>
+              <h5>Add new category</h5>
             </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Thêm danh mục</li>
-            </ol>
+              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Home</a></li>
+              <li class="breadcrumb-item active">Add new category</li>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -49,12 +48,12 @@
 
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Tên danh mục</label>
+                    <label for="">Category</label>
                     <input type="text" class="form-control" id="name" name="name" required placeholder="Name">
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Chọn ảnh</label>
+                    <label for="exampleInputFile">Choose image</label>
                     <div class="input-group">
                       <input type="file" name="file" required class="text-center center-block file-upload" accept="image/gif, image/jpeg, image/jpg, image/png"/>
                     </div>
@@ -62,7 +61,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm danh mục</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

@@ -33,12 +33,12 @@
               <div class="inner">
                 <h3>{{$countCus}}</h3>
 
-                <p>Khách hàng</p>
+                <p>Customer</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="{{route('list-customer')}}" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('list-customer')}}" class="small-box-footer">Details <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -48,12 +48,12 @@
               <div class="inner">
                 <h3>{{$countConSuc}}</h3>
 
-                <p>Đã tư vấn</p>
+                <p>Consulted</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{{route('list-consultant')}}" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('list-consultant')}}" class="small-box-footer">Details <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -63,12 +63,12 @@
               <div class="inner">
                 <h3>{{$countOrdSuc}}</h3>
 
-                <p>Đã hoàn thành</p>
+                <p>Completed</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="{{route('order-customer')}}" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('order-customer')}}" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -78,12 +78,12 @@
               <div class="inner">
                 <h3>{{$countOrdNew}}</h3>
 
-                <p>Đơn hàng mới</p>
+                <p>New order</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="{{route('order-customer')}}" class="small-box-footer">Chi tiết <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('order-customer')}}" class="small-box-footer">Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

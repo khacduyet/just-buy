@@ -11,7 +11,7 @@
             <!-- <h1>DataTables</h1>
             <a href="">Home</a> -->
             <section class="content-header">
-              <h5>Chi tiết đơn hàng</h5>
+              <h5>Order details</h5>
             </section>
           </div>
           <div class="col-sm-6">
@@ -31,15 +31,15 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Chi tiết đơn hàng #{{$orders->id}}</h3>
+              <h3 class="card-title">Order details #{{$orders->id}}</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body" >
                 <div>
-                    <p>- Khách hàng: <b> {{$orders->getCus -> name}} </b></p>
-                    <p>- Số điện thoại: <b> {{$orders->phone}} </b></p>
-                    <p>- Địa chỉ giao hàng: <b> {{$orders->address}}</b></p>
-                    <p>- Tổng thanh toán: <b> {{number_format($orders->total_amount)}} VNĐ</b></p>
+                    <p>- Customer: <b> {{$orders->getCus -> name}} </b></p>
+                    <p>- Phone number: <b> {{$orders->phone}} </b></p>
+                    <p>- To: <b> {{$orders->address}}</b></p>
+                    <p>- Total price: <b> {{number_format($orders->total_amount)}} VNĐ</b></p>
                 </div>
                 <table id="" class="table table-bordered table-striped">
                     <thead>
@@ -79,7 +79,7 @@
                   @elseif($orders->status == 1)
                   <a type="button" class="btn btn-sm btn-primary float-right" href="{{route('complete-order',['id'=>$orders->id])}}">Xác nhận giao hàng</a>
                   @else
-                  <button type="button" class="btn btn-sm btn-success float-right" disabled>Đơn hàng đã được giao</button>
+                  <button type="button" class="btn btn-sm btn-success float-right" disabled>Deliveried</button>
                   @endif
                 </div>
             </div>

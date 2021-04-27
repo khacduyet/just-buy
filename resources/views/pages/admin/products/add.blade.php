@@ -10,13 +10,13 @@
           <div class="col-sm-6">
             <!-- <h1>Thêm sản phẩm</h1> -->
             <section class="content-header">
-              <h5>Thêm sản phẩm</h5>
+              <h5>Add new product</h5>
             </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Thêm sản phẩm</li>
+              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Home</a></li>
+              <li class="breadcrumb-item active">Add new product</li>
             </ol>
           </div>
         </div>
@@ -49,37 +49,37 @@
 
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Mã sản phẩm</label>
+                    <label for="">Product ID</label>
                     <input type="text" class="form-control" id="code" name="code" required placeholder="code">
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="">Tên sản phẩm</label>
+                    <label for="">Name</label>
                     <input type="text" class="form-control" id="name" name="name" required placeholder="Name">
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="">Loại sản phẩm</label>
+                    <label for="">Category</label>
                     <select name="cate_id" class="form-control" required>
-                      <option value="0">--Chọn loại sản phẩm--</option>
+                      <option value="0">--Choose category--</option>
                       @foreach($categories as $cat)
                         <option value="{{ $cat->id }}">{{ $cat->name }}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Chọn ảnh sản phẩm</label>
+                    <label for="exampleInputFile">Choose image</label>
                     <div class="input-group">
                       <input type="file" name="file" required class="text-center center-block file-upload" accept="image/gif, image/jpeg, image/jpg, image/png"/>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="">Giá sản phẩm</label>
+                    <label for="">Price</label>
                     <input type="number" class="form-control" id="price" name="price" required placeholder="price">
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                      <label for="">Mô tả</label>
+                      <label for="">Description</label>
                       <div class="mb-3">
                         <textarea class="form-control" required id="des" name="des" placeholder="Place some text here"
                                   style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
@@ -97,16 +97,16 @@
                   </div>
                   @endforeach
                   <div class="form-group">
-                    <label for="">Trạng thái</label>
+                    <label for="">Status</label>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1" name="status">
-                        <label class="form-check-label" for="exampleCheck1">Hiện</label>
+                        <label class="form-check-label" for="exampleCheck1">On</label>
                     </div>
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+                  <button type="submit" class="btn btn-primary">Add new product</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

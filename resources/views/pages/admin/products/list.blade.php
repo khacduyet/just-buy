@@ -18,9 +18,9 @@
           <div class="col-sm-6">
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
-              <h5>Danh sách sản phẩm</h5>
+              <h5>List products</h5>
             </section>
-            <a href="{{route('add-products')}}">Thêm sản phẩm</a>
+            <a href="{{route('add-products')}}">Add new product</a>
 
           </div>
           <div class="col-sm-6">
@@ -49,12 +49,12 @@
                   <tr>
                     <th>ID</th>
                     <th>Code</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Ảnh sản phẩm</th>
-                    <th>Loại sản phẩm</th>
-                    <th>Giá sản phẩm</th>
-                    <th>Trạng thái</th>
-                    <th>Ngày tạo</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Category/th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Created time</th>
                     <th>#</th>
                   </tr>
                 </thead>
@@ -68,11 +68,11 @@
                     <td><img src="{{asset('public/Uploads/products')}}/{{$pro -> image}}" alt="" width="100px"></td>
                     <td>{{$pro -> getCat -> name}}</td>
                     <td>{{number_format($pro -> price)}} VNĐ</td>
-                    <td>{{ $pro->status == 1 ? "Hiện" : "Ẩn" }}</td>
+                    <td>{{ $pro->status == 1 ? "On" : "Off" }}</td>
                     <td>{{$pro -> created_at}}</td>
                     <td>
-                      <a href="{{ Route('edit-products',$pro) }}" class="btn btn-primary btn-xs">Sửa</a>
-                      <a href="{{ Route('deletePro',$pro) }}" class="btn btn-danger btn-xs" onclick="return confirm('Xác nhận xoá ?')">Xóa</a>
+                      <a href="{{ Route('edit-products',$pro) }}" class="btn btn-primary btn-xs">Edit</a>
+                      <a href="{{ Route('deletePro',$pro) }}" class="btn btn-danger btn-xs" onclick="return confirm('Xác nhận xoá ?')">Delete</a>
                     </td>
                   </tr>
                   @endforeach

@@ -18,9 +18,9 @@
           <div class="col-sm-6">
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
-              <h5>Danh sách các config</h5>
+              <h5>List configs</h5>
             </section>
-            <a href="{{route('add-config')}}">Thêm config</a>
+            <a href="{{route('add-config')}}">Add new config</a>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -39,7 +39,7 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Danh sách config</h3>
+              <h3 class="card-title">List configs</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -47,9 +47,9 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên </th>
-                    <th>Giá trị</th>
-                    <th>Ngày thêm</th>
+                    <th>Name </th>
+                    <th>Value</th>
+                    <th>Created time</th>
                     <th>#</th>
                   </tr>
                 </thead>
@@ -63,7 +63,7 @@
                       <td>{{$con -> value}}</td>
                       <td>{{$con->updated_at}}</td>
                       <td>
-                        <a href="{{ Route('edit-config',$con) }}" class="btn btn-primary btn-xs">Sửa</a>
+                        <a href="{{ Route('edit-config',$con) }}" class="btn btn-primary btn-xs">Edit</a>
                         <!-- <a href="{{Route('delete-config',$con)}}" class="btn btn-danger btn-xs" onclick="return confirm('Xác nhận xoá ?')">Xóa</a> -->
                       </td>
                     </tr>

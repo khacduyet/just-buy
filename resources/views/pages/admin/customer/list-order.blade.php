@@ -10,7 +10,7 @@
             <!-- <h1>DataTables</h1>
             <a href="">Home</a> -->
             <section class="content-header">
-              <h5>Danh sách đơn hàng</h5>
+              <h5>List orders</h5>
             </section>
           </div>
           <div class="col-sm-6">
@@ -52,14 +52,14 @@
                     <td>{{$ord -> created_at}}</td>
                     <td>
                       @if($ord -> status == 0)
-                      <span class="btn-sm bg-warning">Chờ xác nhận</span>
+                      <span class="btn-sm bg-warning">Waiting</span>
                       @elseif($ord -> status == 1)
-                      <span class="btn-sm bg-info">Đã xác nhận đơn hàng</span>
+                      <span class="btn-sm bg-info">Confirmed</span>
                       @elseif($ord -> status == 2)
-                      <span class="btn-sm bg-success">Đơn hàng đã được giao</span>
+                      <span class="btn-sm bg-success">Deliveried</span>
                       @endif
                     </td>
-                    <td><a href="{{route('ord-detail',['id'=>$ord->id])}}" class="btn btn-primary btn-xs">Xem</a></td>
+                    <td><a href="{{route('ord-detail',['id'=>$ord->id])}}" class="btn btn-primary btn-xs">View</a></td>
                   </tr>
                   @endforeach
                 </tbody>

@@ -10,7 +10,7 @@
             <!-- <h1>DataTables</h1>
             <a href="">Home</a> -->
             <section class="content-header">
-              <h5>Danh sách </h5>
+              <h5>List</h5>
             </section>
           </div>
           <div class="col-sm-6">
@@ -39,10 +39,10 @@
                   <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Số điện thoại</th>
+                    <th>Phone</th>
                     <th>Email</th>
-                    <th>Trạng thái</th>
-                    <th>Ngày tạo</th>
+                    <th>Status</th>
+                    <th>Created time</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -57,10 +57,10 @@
                       @if($con -> status == 0)
                       <form action="{{route('edit-consultant',['id'=>$con->id])}}" method="POST">
                         @csrf
-                        <button type="submit" class="btn-sm btn-info">Xử lý</button>
+                        <button type="submit" class="btn-sm btn-info">Handling</button>
                       </form>
                       @elseif($con -> status == 1)
-                      <span class="btn-sm bg-success">Đã tư vấn</span>
+                      <span class="btn-sm bg-success">Consulted</span>
                       @endif
                     </td>
                   </tr>
