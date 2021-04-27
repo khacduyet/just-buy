@@ -11,14 +11,14 @@
             <!-- <h1>Thêm admin</h1> -->
             <section class="content-header">
              <h5>
-              Thêm người quản trị
+              Add new administrator
             </h5>
           </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Thêm admin</li>
+              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Home</a></li>
+              <li class="breadcrumb-item active">Add new administrator</li>
             </ol>
           </div>
         </div>
@@ -61,12 +61,12 @@
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="">Mật khẩu</label>
+                    <label for="">Password</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="">Nhập lại mật khẩu</label>
+                    <label for="">Re-password</label>
                     <input type="password" class="form-control" id="password" name="confirm_password" required>
                     <div class="help-block"></div>
                   </div>
@@ -99,7 +99,7 @@
                     <label class="form-check-label" for="service">Service</label>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Chọn ảnh admin</label>
+                    <label for="exampleInputFile">Choose admin</label>
                     <div class="input-group">
                       <input type="file" name="file" class="text-center center-block file-upload" accept="image/gif, image/jpeg, image/jpg, image/png"/>
                     </div>
@@ -107,7 +107,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm admin</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

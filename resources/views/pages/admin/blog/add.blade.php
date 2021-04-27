@@ -10,12 +10,12 @@
           <div class="col-sm-6">
             <!-- <h1>Thêm blog</h1> -->
             <section class="content-header">
-              <h5>Thêm blog</h5>
+              <h5>Add new blog</h5>
             </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Trang chủ</a></li>
+              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Home</a></li>
               <li class="breadcrumb-item active">Thêm blog</li>
             </ol>
           </div>
@@ -49,22 +49,22 @@
 
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Tên blog</label>
+                    <label for="">Title</label>
                     <input type="text" class="form-control" id="name" name="name" required placeholder="Name">
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Chọn ảnh blog</label>
+                    <label for="exampleInputFile">Choose image</label>
                     <div class="input-group">
                       <input type="file" name="file" required class="text-center center-block file-upload" accept="image/gif, image/jpeg, image/jpg, image/png"/>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="">Mô tả ngắn</label>
+                    <label for="">Description</label>
                     <textarea class="form-control" required id="des" name="des" placeholder="Place some text here"></textarea>
                   </div>
                   <div class="form-group">
-                      <label for="">Nội dung</label>
+                      <label for="">Content</label>
                       <div class="mb-3">
                         <textarea class="textarea" required id="des" name="content" placeholder="Place some text here" ></textarea>
                       </div>
@@ -72,7 +72,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm blog</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

@@ -19,10 +19,10 @@
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
              <h5>
-              Danh sách tên thuộc tính
+              List attributes
             </h5>
           </section>
-            <a href="{{route('add-name-attr')}}">Thêm thuộc tính</a>
+            <a href="{{route('add-name-attr')}}">Add new attribute</a>
 
           </div>
           <div class="col-sm-6">
@@ -51,7 +51,7 @@
                   <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Ngày tạo</th>
+                    <th>Created time</th> 
                     <th>#</th>
                   </tr>
                 </thead>
@@ -63,8 +63,8 @@
                     <td>{{$value->name}}</td>
                     <td>{{$value->created_at}}</td>
                     <td>
-                      <a href="{{ Route('edit-attrName',$value) }}" class="btn btn-primary btn-xs">Sửa</a>
-                      <a href="{{ Route('delete-attrName',$value) }}" class="btn btn-danger btn-xs" onclick="return confirm('Xác nhận xoá ?')">Xóa</a>
+                      <a href="{{ Route('edit-attrName',$value) }}" class="btn btn-primary btn-xs">Edit</a>
+                      <a href="{{ Route('delete-attrName',$value) }}" class="btn btn-danger btn-xs" onclick="return confirm('Do you want to delete this?')">Delete</a>
                     </td>
                   </tr>
                   @endforeach

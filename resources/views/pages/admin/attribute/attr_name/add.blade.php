@@ -11,14 +11,14 @@
             <!-- <h1>Thêm admin</h1> -->
             <section class="content-header">
              <h5>
-              Thêm tên thuộc tính
+              Add new attribute
             </h5>
           </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sua thuoc tinh</li>
+              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Home</a></li>
+              <li class="breadcrumb-item active">Edit attribute</li>
             </ol>
           </div>
         </div>
@@ -50,13 +50,13 @@
               <form  method="post" role="form" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Tên thuộc tính</label>
+                    <label for="">Attribute name</label>
                     <input type="text" class="form-control" value="" id="name" name="name" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm thuộc tính</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

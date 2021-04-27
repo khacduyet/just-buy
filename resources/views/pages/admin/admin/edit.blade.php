@@ -10,14 +10,14 @@
             <!-- <h1>Sửa user</h1> -->
             <section class="content-header">
              <h5>
-              Sửa thông tin
+              Edit administrator
             </h5>
           </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sửa admin</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Edit administrator</li>
             </ol>
           </div>
         </div>
@@ -50,7 +50,7 @@
                   <div class="form-group">
                     <div class="text-center">
                       <img src="{{asset('public/uploads/avatar')}}/{{$admin->avatar}}" class="avatar img-circle img-responsive img-thumbnail" alt="avatar" width="120px">
-                      <h6 class="font-italic font-weight-normal">Tải lên ảnh đại diện khác...</h6>
+                      <h6 class="font-italic font-weight-normal">Choose image</h6>
                     </div>
                   </div>
                   <div class="form-group">
@@ -64,7 +64,7 @@
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="">Quyền quản trị</label>
+                    <label for="">Role</label>
                   </div>
                   <div class="form-check">
                     <input type="checkbox" name="full" id="full" class="form-check-input" value="1" {{ in_array(1,$arr_role) ?"checked" : ""}}>
@@ -97,7 +97,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Sửa admin</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

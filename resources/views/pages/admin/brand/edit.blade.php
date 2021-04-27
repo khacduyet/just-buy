@@ -9,13 +9,13 @@
           <div class="col-sm-6">
             <!-- <h1>Sửa user</h1> -->
             <section class="content-header">
-              <h5>Sửa thông tin</h5>
+              <h5>Edit brand</h5>
             </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sửa brand</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Edit brand</li>
             </ol>
           </div>
         </div>
@@ -46,27 +46,27 @@
               <form  method="post" role="form" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Tên brand</label>
+                    <label for="">Name</label>
                     <input type="text" class="form-control" id="name" value="{{$brand->name}}" name="name" required placeholder="Name">
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Chọn ảnh brand</label>
+                    <label for="exampleInputFile">Choose image</label>
                     <div class="input-group row">
                       <div class="col-8"><input type="file" name="file" class="text-center center-block file-upload" accept="image/gif, image/jpeg, image/jpg, image/png"/>  </div>
-                      <div class="col-4"><img src="{{asset('public/Uploads')}}/{{$brand-> image}}" alt="Chưa có hình ảnh" width="100%"></div>
+                      <div class="col-4"><img src="{{asset('public/Uploads')}}/{{$brand-> image}}" alt="No image" width="100%"></div>
 
                     </div>
                   </div>
                   <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" {{ $brand->status == 1 ? "checked" : "" }} name="status">
-                    <label class="form-check-label" for="exampleCheck1">Hiện</label>
+                    <label class="form-check-label" for="exampleCheck1">On</label>
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Sửa brand</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

@@ -9,13 +9,13 @@
           <div class="col-sm-6">
             <!-- <h1>Sửa user</h1> -->
             <section class="content-header">
-              <h5>Sửa thông tin</h5>
+              <h5>Edit blog</h5>
             </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sửa blog</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Edit blog</li>
             </ol>
           </div>
         </div>
@@ -46,12 +46,12 @@
               <form  method="post" role="form" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Tên blog</label>
+                    <label for="">Title</label>
                     <input type="text" class="form-control" id="name" value="{{$blog->name}}" name="name" required placeholder="Name">
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Chọn ảnh blog</label>
+                    <label for="exampleInputFile">Choose image</label>
                     <div class="input-group row">
                       <div class="col-8"><input type="file" name="file" class="text-center center-block file-upload" accept="image/gif, image/jpeg, image/jpg, image/png"/>  </div>
                       <div class="col-4"><img src="{{asset('public/Uploads')}}/{{$blog-> image}}" alt="Chưa có hình ảnh" width="100%"></div>
@@ -59,7 +59,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                      <label for="">Mô tả ngắn</label>
+                      <label for="">Description</label>
                       <div class="mb-3">
                         <textarea class="form-control" required id="des" name="des" placeholder="Place some text here">
                             {{$blog->des}}
@@ -67,7 +67,7 @@
                       </div>
                   </div>
                   <div class="form-group">
-                      <label for="">Nội dung</label>
+                      <label for="">Content</label>
                       <div class="mb-3">
                         <textarea class="textarea form-control" required id="content" name="content" placeholder="Place some text here">
                             {{$blog->content}}
@@ -78,7 +78,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Sửa blog</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>
