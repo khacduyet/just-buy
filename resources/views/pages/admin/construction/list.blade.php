@@ -18,9 +18,9 @@
           <div class="col-sm-6">
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
-              <h5>Danh sách công trình</h5>
+              <h5>List constructions</h5>
             </section>
-            <a href="{{route('add-construction')}}">Thêm công trình</a>
+            <a href="{{route('add-construction')}}">Add new construction</a>
 
           </div>
           <div class="col-sm-6">
@@ -48,12 +48,12 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên construction</th>
+                    <th>Name</th>
                     <!-- <th>Ảnh construction</th> -->
-                    <th>Tiêu đề</th>
-                    <th>Mô tả</th>
-                    <th>Trạng thái</th>
-                    <th>Ngày tạo</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Created time</th> 
                     <th>#</th>
                   </tr>
                 </thead>
@@ -70,11 +70,11 @@
                     </td>
                     <td>{!!$con->title!!}</td>
                     <td>{!!$con->des!!}</td>
-                    <td>{{ $con->status == 1 ? "Hiện" : "Ẩn" }}</td>
+                    <td>{{ $con->status == 1 ? "On" : "Off" }}</td>
                     <td>{{$con -> created_at}}</td>
                     <td>
-                      <a href="{{ Route('edit-construction',$con) }}" class="btn btn-primary btn-xs">Sửa</a>
-                      <a href="{{ Route('delete-construction',$con) }}" class="btn btn-danger btn-xs" onclick="return confirm('Xác nhận xoá ?')">Xóa</a>
+                      <a href="{{ Route('edit-construction',$con) }}" class="btn btn-primary btn-xs">Edit</a>
+                      <a href="{{ Route('delete-construction',$con) }}" class="btn btn-danger btn-xs" onclick="return confirm('Do you want delete this?')">Delete</a>
                     </td>
                   </tr>
                   @endforeach

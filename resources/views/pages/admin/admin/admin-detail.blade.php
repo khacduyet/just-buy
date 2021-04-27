@@ -9,14 +9,14 @@
             <!-- <h1>Thêm admin</h1> -->
             <section class="content-header">
              <h5>
-              Quản lý admin
+             Administrators management 
             </h5>
           </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Quản lý admin</li>
+              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Home</a></li>
+              <li class="breadcrumb-item active">Administrators management</li>
             </ol>
           </div>
         </div>
@@ -32,7 +32,7 @@
 	    <div class="box box-primary">
 	      <!-- /.box-header -->
 	      <div class="card-header">
-            <h3 class="card-title">Sửa đổi thông tin</h3>
+            <h3 class="card-title">Edit administrator</h3>
           </div>
 	      <!-- form start -->
 	      <form action="" method="post" accept-charset="utf-8" enctype="multipart/form-data" class="p-4">
@@ -42,14 +42,14 @@
 	            <div class="col-md-3">
 	              <div class="text-center">
 	                <img src="{{asset('public/uploads/avatar')}}/{{Auth::user()->avatar}}" class="avatar img-circle img-responsive img-thumbnail" alt="avatar">
-	                <h6 class="font-italic font-weight-normal">Tải lên ảnh đại diện khác...</h6>
+	                <h6 class="font-italic font-weight-normal">Choose image</h6>
 	                <input type="file" name="upload_file" class="text-center center-block file-upload" accept="image/gif, image/jpeg, image/jpg, image/png"/>
 	              </div>
 	              <hr>
 	            </div>
 	            <div class="col-md-9">
 	              <div class="form-group">
-	                <label for="name">Họ tên</label>
+	                <label for="name">Fullname</label>
 	                <input type="text" class="form-control" name="name" id="name" placeholder="Họ tên" value="{{Auth::user()->name}}">
 	                @if($errors->has('name'))
 	                <div class="help-block">
@@ -67,7 +67,7 @@
 	                @endif
 	              </div>
 	              <div class="form-group">
-	                <label for="password">Mật khẩu</label>
+	                <label for="password">Password</label>
 	                <input type="password" class="form-control" name="password" id="password" placeholder="Mật khẩu">
 	                @if($errors->has('password'))
 	                <div class="help-block">
@@ -76,7 +76,7 @@
 	                @endif
 	              </div>
 	              <div class="form-group">
-	                <label for="password">Xác nhận mật khẩu</label>
+	                <label for="password">Re-password</label>
 	                <input type="password" class="form-control" name="conf_password" id="conf_password" placeholder="Xác nhận mật khẩu">
 	                @if($errors->has('conf_password'))
 	                <div class="help-block">
@@ -88,7 +88,7 @@
 	          </div>
 	          <div class="box-footer">
 	            <div class="float-right">
-	              <button type="submit" class="btn btn-sm btn-primary">Lưu</button>
+	              <button type="submit" class="btn btn-sm btn-primary">Save</button>
 	            </div>
 	          </div>
 	        </div>

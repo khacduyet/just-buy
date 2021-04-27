@@ -18,9 +18,9 @@
           <div class="col-sm-6">
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
-              <h5>Danh sách blog</h5>
+              <h5>List blogs</h5>
             </section>
-            <a href="{{route('add-blog')}}">Thêm blog</a>
+            <a href="{{route('add-blog')}}">Add new blog</a>
 
           </div>
           <div class="col-sm-6">
@@ -48,10 +48,10 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên blog</th>
-                    <th>Ảnh blog</th>
-                    <th>Mô tả</th>
-                    <th>Ngày tạo</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Created time</th>
                     <th>#</th>
                   </tr>
                 </thead>
@@ -65,8 +65,8 @@
                     <td>{!!$blg->des!!}</td>
                     <td>{{$blg -> created_at}}</td>
                     <td>
-                      <a href="{{ Route('edit-blog',$blg) }}" class="btn btn-primary btn-xs">Sửa</a>
-                      <a href="{{ Route('delete-blog',$blg) }}" class="btn btn-danger btn-xs" onclick="return confirm('Xác nhận xoá ?')">Xóa</a>
+                      <a href="{{ Route('edit-blog',$blg) }}" class="btn btn-primary btn-xs">Edit</a>
+                      <a href="{{ Route('delete-blog',$blg) }}" class="btn btn-danger btn-xs" onclick="return confirm('Do you want to delete this?')">Delete</a>
                     </td>
                   </tr>
                   @endforeach

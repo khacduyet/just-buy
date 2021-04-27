@@ -9,13 +9,13 @@
           <div class="col-sm-6">
             <!-- <h1>Thêm config</h1> -->
             <section class="content-header">
-              <h5>Thêm config</h5>
+              <h5>Add new config</h5>
             </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Thêm config</li>
+              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Home</a></li>
+              <li class="breadcrumb-item active">Add new config</li>
             </ol>
           </div>
         </div>
@@ -39,9 +39,9 @@
                 <div class="card-body">
                   <div class="form-group">
                   <div class="form-group">
-                    <label for="">Tên</label>
+                    <label for="">Name</label>
                     <select name="name" class="form-control" required>
-                      <option>--Chọn giá trị--</option>
+                      <option>--Choose option--</option>
                       <option value="email">email</option>
                       <option value="phone">phone</option>
                       <option value="address">address</option>
@@ -52,14 +52,14 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="">Giá trị</label>
-                    <input type="text" class="form-control" id="name" name="value" required placeholder="Nhập tên ">
+                    <label for="">Value</label>
+                    <input type="text" class="form-control" id="name" name="value" required placeholder="Enter name... ">
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Thêm config</button>
+                  <button type="submit" class="btn btn-primary">Add new config</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

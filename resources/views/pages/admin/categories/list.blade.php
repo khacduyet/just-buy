@@ -18,9 +18,9 @@
           <div class="col-sm-6">
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
-              <h5>Danh sách danh mục</h5>
+              <h5>List categories</h5>
             </section>
-            <a href="{{route('add-categories')}}">Thêm danh mục</a>
+            <a href="{{route('add-categories')}}">Add new category</a>
 
           </div>
           <div class="col-sm-6">
@@ -48,9 +48,9 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên danh mục</th>
-                    <th>Ảnh</th>
-                    <th>Ngày tạo</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Created time</th>
                     <th>#</th>
                   </tr>
                 </thead>
@@ -63,8 +63,8 @@
                     <td><img src="{{asset('public/Uploads')}}/{{$cat -> image}}" alt="" width="100px"></td>
                     <td>{{$cat -> created_at}}</td>
                     <td>
-                      <a href="{{ Route('edit-categories',$cat) }}" class="btn btn-primary btn-xs">Sửa</a>
-                      <a href="{{ Route('deleteCat',$cat) }}" class="btn btn-danger btn-xs" onclick="return confirm('Xác nhận xoá ?')">Xóa</a>
+                      <a href="{{ Route('edit-categories',$cat) }}" class="btn btn-primary btn-xs">Edit</a>
+                      <a href="{{ Route('deleteCat',$cat) }}" class="btn btn-danger btn-xs" onclick="return confirm('Do you want to delete this?')">Delete</a>
                     </td>
                   </tr>
                   @endforeach

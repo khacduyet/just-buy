@@ -27,7 +27,7 @@
       <li class="nav-item dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           <img src="{{asset('public/uploads/avatar')}}/{{Auth::user()->avatar}}" width="30" height="30" class="img-circle elevation-2" alt="User Image">
-          <span class="hidden-xs">Tài khoản</span>
+          <span class="hidden-xs">Account</span>
         </a>
         <ul class="dropdown-menu">
           <div class="">
@@ -41,8 +41,8 @@
               <img class="img-circle elevation-2" src="{{asset('public/uploads/avatar')}}/{{Auth::user()->avatar}}" alt="User Avatar">
             </div>
             <div class="card-footer clearfix">
-              <a href="{{route('edit-profile',['id'=>Auth::user()->id])}}" class="btn btn-xs btn-info float-left">Chi tiết</a>
-              <a href="{{route('logout')}}" class="btn btn-xs btn-danger float-right">Đăng xuất</a>
+              <a href="{{route('edit-profile',['id'=>Auth::user()->id])}}" class="btn btn-xs btn-info float-left">Detail</a>
+              <a href="{{route('logout')}}" class="btn btn-xs btn-danger float-right">Logout</a>
               <!-- /.row -->
             </div>
           </div>
@@ -83,7 +83,7 @@
             <a href="{{ route('admin') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Trang chủ
+                Home
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
@@ -102,7 +102,7 @@
             <a href="{{route('list-about')}}" class="nav-link">
               <i class="nav-icon fas fa-shopping-cart"></i>
               <p>
-                Trang giới thiệu
+               About
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
@@ -113,7 +113,7 @@
             <a href="{{route('list-service')}}" class="nav-link">
               <i class="nav-icon fas fa-shopping-cart"></i>
               <p>
-                Trang dịch vụ
+               Services
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
@@ -133,13 +133,13 @@
               <li class="nav-item">
                 <a href="{{route('add-admin')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm admin</p>
+                  <p>Add new admin</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('list-admin')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách admin</p>
+                  <p>List admins</p>
                 </a>
               </li>
             </ul>
@@ -159,7 +159,7 @@
               <li class="nav-item">
                 <a href="{{route('list-config')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách config</p>
+                  <p>List configs</p>
                 </a>
               </li>
             </ul>
@@ -169,7 +169,7 @@
             <a href="{{ route('list-consultant') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Tư vấn khách hàng
+                Consult customer
                 <span class="right badge badge-danger">{{$count_consul}}</span>
               </p>
             </a>
@@ -179,7 +179,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Quản lí khách hàng
+               Customer management
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -187,13 +187,13 @@
               <li class="nav-item">
                 <a href="{{route('list-customer')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách khách hàng</p>
+                  <p>List customers</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('order-customer')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách đơn hàng</p>
+                  <p>List orders</p>
                 </a>
               </li>
             </ul>
@@ -204,7 +204,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Danh mục
+                Categories
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -212,13 +212,13 @@
               <li class="nav-item">
                 <a href="{{route('add-categories')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm danh mục</p>
+                  <p>Add new category</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('list-categories')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách danh mục</p>
+                  <p>List categories</p>
                 </a>
               </li>
             </ul>
@@ -229,7 +229,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Sản phẩm
+                Products
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -237,13 +237,13 @@
               <li class="nav-item">
                 <a href="{{route('add-products')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm sản phẩm</p>
+                  <p>Add new product</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('list-products')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách sản phẩm</p>
+                  <p>List products</p>
                 </a>
               </li>
             </ul>
@@ -254,7 +254,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Thuộc tính sản phẩm
+                Products Attributes
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -263,7 +263,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
-                   Thuộc tính
+                   Attributes
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
@@ -271,13 +271,13 @@
                   <li class="nav-item">
                     <a href="{{route('add-name-attr')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Thêm thuộc tính</p>
+                      <p>Add new product</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{route('list-attrName')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>DS thuộc tính</p>
+                      <p>List products</p>
                     </a>
                   </li>
                 </ul>
@@ -286,7 +286,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
-                    Giá trị thuộc tính
+                    Attribute value
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
@@ -294,13 +294,13 @@
                   <li class="nav-item">
                     <a href="{{route('add-value-attr')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Thêm giá trị thuộc tính</p>
+                      <p>Add new atribute</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{route('list-attrValue')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>DS giá trị thuộc tính</p>
+                      <p>List attributes</p>
                     </a>
                   </li>
                 </ul>
@@ -309,7 +309,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
-                    DS thuộc tính
+                    List attributes
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
@@ -317,7 +317,7 @@
                   <li class="nav-item">
                     <a href="{{route('list-attrProduct')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>DS thuộc tính sản phẩm </p>
+                      <p>List product attributes</p>
                     </a>
                   </li>
                 </ul>
@@ -338,13 +338,13 @@
               <li class="nav-item">
                 <a href="{{route('add-banner')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm banner</p>
+                  <p>Add new banner</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('list-banner')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách banner</p>
+                  <p>List banners</p>
                 </a>
               </li>
             </ul>
@@ -363,13 +363,13 @@
               <li class="nav-item">
                 <a href="{{route('add-blog')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm blog</p>
+                  <p>Add new blog</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('list-blog')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách blog</p>
+                  <p>List blogs</p>
                 </a>
               </li>
             </ul>
@@ -380,7 +380,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Công trình
+                Constructions
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -388,13 +388,13 @@
               <li class="nav-item">
                 <a href="{{route('add-construction')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm công trình</p>
+                  <p>Add new construction</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('list-construction')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách công trình</p>
+                  <p>List constructions</p>
                 </a>
               </li>
             </ul>
@@ -405,7 +405,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Thương hiệu
+                Brands
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -413,13 +413,13 @@
               <li class="nav-item">
                 <a href="{{route('add-brand')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Thêm thương hiệu</p>
+                  <p>Add new brand</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('list-brand')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Danh sách thương hiệu</p>
+                  <p>List brands</p>
                 </a>
               </li>
             </ul>

@@ -11,10 +11,10 @@
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
              <h5>
-              Danh sách thuộc tính sản phẩm
+              List product attributes
             </h5>
           </section>
-            <a href="{{route('add-value-attr')}}">Thêm admin</a>
+            <a href="{{route('add-value-attr')}}">Add new administrator</a>
 
           </div>
           <div class="col-sm-6">
@@ -42,10 +42,10 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Sản phẩm</th>
-                    <th>Thuộc tính</th>
-                    <th>Giá trị thuộc tính</th>
-                    <th>Ngày tạo</th>
+                    <th>Product name</th>
+                    <th>Attribute</th>
+                    <th>Attribute value</th> 
+                    <th>Created time</th>
                   </tr>
                 </thead>
 

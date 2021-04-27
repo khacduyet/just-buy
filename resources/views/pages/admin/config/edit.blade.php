@@ -9,13 +9,13 @@
           <div class="col-sm-6">
             <!-- <h1>Sửa config</h1> -->
             <section class="content-header">
-              <h5>Sửa thông tin</h5>
+              <h5>Edit config</h5>
             </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sửa config</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Edit config</li>
             </ol>
           </div>
         </div>
@@ -38,26 +38,26 @@
                 @if($config->name != 'about' && $config->name != 'service')
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Tên</label>
+                    <label for="">Name</label>
                     <select name="name" class="form-control" required>
                       <option value="{{$config->name}}" >{{$config->name}}</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="">Giá trị</label>
-                    <input type="text" class="form-control" id="name" name="value" value="{{$config->value}}" required placeholder="Nhập tên ">
+                    <label for="">Price</label>
+                    <input type="text" class="form-control" id="name" name="value" value="{{$config->value}}" required placeholder="Enter name... ">
                   </div>
                 </div>
                 @else
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Tên</label>
+                    <label for="">Name</label>
                     <select name="name" class="form-control">
                       <option value="{{$config->name}}">{{$config->name}}</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="">Giá trị</label>
+                    <label for="">Price</label>
                     <textarea class="textarea form-control" required id="des" name="value" placeholder="Place some text here">
                       {{$config->value}}
                     </textarea>
@@ -67,7 +67,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Sửa config</button>
+                  <button type="submit" class="btn btn-primary">Edit config</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

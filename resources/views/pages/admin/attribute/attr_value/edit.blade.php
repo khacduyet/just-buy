@@ -11,14 +11,14 @@
             <!-- <h1>Thêm admin</h1> -->
             <section class="content-header">
              <h5>
-              Sửa thông tin
+              Edit attribute value
             </h5>
           </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sua thuoc tinh</li>
+              <li class="breadcrumb-item"><a href="{{ asset('/') }}admin">Home</a></li>
+              <li class="breadcrumb-item active">Edit attribute value</li>
             </ol>
           </div>
         </div>
@@ -50,23 +50,23 @@
               <form  method="post" role="form" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">
-                    <label for="">Thuộc tính</label>
+                    <label for="">Attribute</label>
                     <select name="attr_name" class="form-control" required>
-                        <option >--Chọn loại sản phẩm--</option>
+                        <option >--Choose category--</option>
                         @foreach($attrName as $value)
                         <option value="{{ $value->id }}" {{ $attrValue->attribute_id == $value->id ? "selected" : "" }}>{{ $value->name }}</option>
                         @endforeach
                     </select>
                     </div>
                     <div class="form-group">
-                        <label for="">Giá trị thuộc tính</label>
+                        <label for="">Attribute value</label>
                         <input type="text" class="form-control" value="{{$attrValue->value}}" id="value" name="value" required>
                         <div class="help-block"></div>
                       </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Sửa thuộc tính</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

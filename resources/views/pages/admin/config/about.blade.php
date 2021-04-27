@@ -18,7 +18,7 @@
           <div class="col-sm-6">
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
-              <h5>Trang giới thiệu</h5>
+              <h5>About</h5>
             </section>
           </div>
           <div class="col-sm-6">
@@ -38,7 +38,7 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Nội dung trang giới thiệu</h3>
+              <h3 class="card-title">Main content</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -46,7 +46,7 @@
               @foreach($config as $con)
                 @if($con->name == 'about')
                   {!!$con->value!!}
-                  <a href="{{ Route('edit-config',$con) }}" class="btn btn-primary btn-xs mt-5 pr-5 pl-5">Sửa</a>
+                  <a href="{{ Route('edit-config',$con) }}" class="btn btn-primary btn-xs mt-5 pr-5 pl-5">Edit</a>
                 @endif
               @endforeach
               <!-- <table id="example1" class="table table-bordered table-striped">

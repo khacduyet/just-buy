@@ -10,7 +10,7 @@
           <div class="col-sm-6">
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
-              <h5>Danh sách khách hàng</h5>
+              <h5>List customers</h5>
             </section>
           </div>
           <div class="col-sm-6">
@@ -40,7 +40,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Ngày tạo</th>
+                    <th>Created time</th>
                   </tr>
                 </thead>
                 <tbody>

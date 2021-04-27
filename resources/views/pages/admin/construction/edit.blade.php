@@ -9,13 +9,13 @@
           <div class="col-sm-6">
             <!-- <h1>Sửa user</h1> -->
             <section class="content-header">
-              <h5>Sửa thông tin</h5>
+              <h5>Edit construction</h5>
             </section>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-              <li class="breadcrumb-item active">Sửa construction</li>
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Edit construction</li>
             </ol>
           </div>
         </div>
@@ -51,7 +51,7 @@
                     <div class="help-block"></div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputFile">Chọn ảnh construction</label>
+                    <label for="exampleInputFile">Choose image</label>
                     <div class="input-group row">
                       <div class="col-12"><input type="file" multiple name="file[]" class="text-center center-block file-upload" accept="image/gif, image/jpeg, image/jpg, image/png"/>  </div>
                       <div class="col-12 mt-4">
@@ -63,7 +63,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                      <label for="">Tiêu đề</label>
+                      <label for="">Title</label>
                       <div class="mb-3">
                         <textarea class="form-control" required id="des" name="title" placeholder="Place some text here">
                             {{$construction->title}}
@@ -71,7 +71,7 @@
                       </div>
                   </div>
                   <div class="form-group">
-                      <label for="">Mô tả ngắn</label>
+                      <label for="">Description</label>
                       <div class="mb-3">
                         <textarea class="form-control" required id="des" name="des" placeholder="Place some text here">
                             {{$construction->des}}
@@ -79,7 +79,7 @@
                       </div>
                   </div>
                   <div class="form-group">
-                      <label for="">Trạng thái</label>
+                      <label for="">Status</label>
                       <div class="form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1" {{ $construction->status == 1 ? "checked" : "" }} name="status">
                           <label class="form-check-label" for="exampleCheck1">Hiện</label>
@@ -89,7 +89,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Sửa construction</button>
+                  <button type="submit" class="btn btn-primary">Edit construction</button>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
               </form>

@@ -18,9 +18,9 @@
           <div class="col-sm-6">
             <!-- <h1>DataTables</h1> -->
             <section class="content-header">
-              <h5>Danh sách thương hiệu</h5>
+              <h5>List brands</h5>
             </section>
-            <a href="{{route('add-brand')}}">Thêm brand</a>
+            <a href="{{route('add-brand')}}">Add new brand</a>
 
           </div>
           <div class="col-sm-6">
@@ -48,10 +48,10 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Tên brand</th>
-                    <th>Ảnh brand</th>
-                    <th>Trạng thái</th>
-                    <th>Ngày tạo</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Created time</th>
                     <th>#</th>
                   </tr>
                 </thead>
@@ -62,11 +62,11 @@
                     <td>{{$bra -> id}}</td>
                     <td>{{$bra -> name}}</td>
                     <td><img src="{{asset('public/Uploads')}}/{{$bra -> image}}" alt="" width="100px"></td>
-                    <td>{{ $bra->status == 1 ? "Hiện" : "Ẩn" }}</td>
+                    <td>{{ $bra->status == 1 ? "On" : "Off" }}</td>
                     <td>{{$bra -> created_at}}</td>
                     <td>
-                      <a href="{{ Route('edit-brand',$bra) }}" class="btn btn-primary btn-xs">Sửa</a>
-                      <a href="{{ Route('delete-brand',$bra) }}" class="btn btn-danger btn-xs" onclick="return confirm('Xác nhận xoá ?')">Xóa</a>
+                      <a href="{{ Route('edit-brand',$bra) }}" class="btn btn-primary btn-xs">Edit</a>
+                      <a href="{{ Route('delete-brand',$bra) }}" class="btn btn-danger btn-xs" onclick="return confirm('Do you want to delete this?')">Delete</a>
                     </td>
                   </tr>
                   @endforeach
