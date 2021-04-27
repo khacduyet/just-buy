@@ -1,5 +1,5 @@
 @extends('layout.client.index')
-@section('title',Service')
+@section('title','Service')
 @section('content')
 <main>
     <section class="representative service space-title">
