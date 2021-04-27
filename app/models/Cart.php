@@ -1,9 +1,9 @@
 <?php
+	namespace App\Models;
 
 	use Illuminate\Http\Request;
 	use App\Http\Requests;
 
-	namespace App\Models;
 	/**
 	 * summary
 	 */

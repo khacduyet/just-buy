@@ -91,15 +91,17 @@ class construction extends Model
 		        $img->move(base_path('public/Uploads'),$image);
 
 		        $data[] = $image;
+				$datas = json_encode($data, JSON_FORCE_OBJECT);
 		    }
 		}else{
-			$data = $con->image;
+			$datas = $con->image;
 		}
+		// die;
 		$updated = $this->update([
 			'name' => request()->name,
 			'des' => request()->des,
 			'title' => request()->title,
-			'image' => json_encode($data, JSON_FORCE_OBJECT),
+			'image' => $datas,
 			'status' => $status,
 		]);
 	}
