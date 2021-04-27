@@ -48,9 +48,9 @@
 		public function store(Request $request,products $products){
             $products->add();
 	        if ($products) {
-	            return redirect()->route('list-products') -> with('message','Thêm mới thành công');
+	            return redirect()->route('list-products') -> with('message','Inserted successful');
 	        }else{
-	            return redirect()->back()->with('message','Thêm mới thất bại' );
+	            return redirect()->back()->with('message','Insert fail' );
 	        }
 		}
 		// sửa dữ liệu
@@ -74,9 +74,9 @@
 		public function update(request $request,products $id){
 			$updated = $id->update_data($id);
 	       	if ($id) {
-	        	return redirect()->route('list-products') -> with('message','Sửa thành công');
+	        	return redirect()->route('list-products') -> with('message','Updated successful');
 	    	} else {
-	     		return redirect()->back()->with('message','Sửa thất bại');
+	     		return redirect()->back()->with('message','Updated fail');
 	    	}
 		}
 
@@ -86,9 +86,9 @@
             $delete = $id->delete();
             productAttribute::where('products_id',$id->id)->delete();
 	        if ($delete) {
-	           return redirect()->route('list-products') -> with('message','Xóa thành công');
+	           return redirect()->route('list-products') -> with('message','Deleted successful');
 	       } else {
-	        return redirect()->back()->with('message','Xóa không thành công');
+	        return redirect()->back()->with('message','Delete fail');
 	       }
         }
 	}

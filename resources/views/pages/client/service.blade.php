@@ -1,15 +1,15 @@
 @extends('layout.client.index')
-@section('title','Dịch vụ')
+@section('title',Service')
 @section('content')
 <main>
     <section class="representative service space-title">
         <div class="container">
             <div class="text-title mb-5 text-center">
                 <h2 class="text-center">
-                    <span class="title-big c-fff">Dịch vụ</span>
+                    <span class="title-big c-fff">Service</span>
                 </h2>
                 <p class="p-4">
-                    Khi nhắc đến thương hiệu vĩnh lộc trên thị trường chắc hẳn những vị đam mê đèn không ai là không biết đến thương hiệu của chúng tôi. Chúng tôi khẳng định mang lại giá trị đắt giá nhất cho khách hàng.
+                    When it comes to Justbuy brand in the market, no one must know our brand of lamp enthusiasts. We affirm to bring the most expensive value to customers.
                 </p>
             </div>
             <div class="row">
@@ -32,29 +32,38 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-3 pt-4">
                     <div class="sv-form border-1 mb-4">
-                        <h3>Tư vấn trực tuyến</h3>
+                        <h3>Online counseling</h3>
                         <div class="form-sigin text-left">
                             <p>Hotline:
-                                <a href="tel:" title="">091 668 1919</a>
+                                <a href="tel:" title="">
+                                @foreach($config as $con)
+                                    @if($con->name == 'phone')
+                                      {!!$con->value!!}
+                                    @endif
+                                @endforeach
+                                </a>
                             </p>
-                            <p>Showroom: 243 Tôn Đức Thắng, Đống Đa,Hà Nội</p>
+                            <p>Showroom: 
+                                @foreach($config as $con)
+                                    @if($con->name == 'address')
+                                      {!!$con->value!!}
+                                    @endif
+                                @endforeach
+                            </p>
                             @if (session()->has('message'))
                             <div class="alert alert-success alert-dismissible fade show p-0" role="alert">
                                 <strong>{{ session()->get('message') }}</strong>
-                                <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button> -->
                             </div>
                             @endif
                             <form action="{{route('add-consultant')}}" class="send-contact2" method="post">
                                 @csrf
                                  <div class="form-group">
-                                     <input type="text" class="form-control" name="name" placeholder="Họ và tên">
+                                     <input type="text" class="form-control" name="name" placeholder="Full Name">
                                  </div>
                                  <div class="form-group">
-                                     <input type="number" class="form-control" name="phone" placeholder="Số điện thoại">
+                                     <input type="number" class="form-control" name="phone" placeholder="Phone">
                                  </div>
-                                 <button type="submit" class="form-control btn-lg-feb">Đăng ký tư vấn</button>
+                                 <button type="submit" class="form-control btn-lg-feb">Sign up for a consultation</button>
                             </form>
                         </div>
                     </div>
@@ -65,7 +74,7 @@
     <section class="thumbs-cus space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Khách hàng tiêu biểu</span>
+                <span class="title-big">Typical customers</span>
             </h2>
            <section class="slick5 pt-lg-5 pt-4 pb-5 wow zoomIn">
                 @foreach($brand as $value)
@@ -73,7 +82,6 @@
                     <a href="" title="" class="avt">
                         <img src="{{asset('public/Uploads')}}/{{$value -> image}}" alt="">
                     </a>
-
                 </div>
                 @endforeach
             </section>

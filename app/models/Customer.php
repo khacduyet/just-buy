@@ -31,16 +31,16 @@ class Customer extends Authenticatable
 				'confirm_password' => 'required|same:password',
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'unique' => ':attribute đã tồn tại',
-                'min' => ':attribute phải trên 6 ký tự',
-                'same' => ':attribute phải giống mật khẩu'
+				'required' => ':attribute is empty.',
+				'unique' => ':attribute already exists',
+                'min' => ':attribute must be over 6 characters',
+                'same' => ':attribute must match the password'
 			],
 			[
-                 'name' => 'Tên',
-                 'email' => 'Email',
-                 'password' => 'Mật khẩu',
-                 'confirm_password' => 'Xác nhận mật khẩu'
+                 'name' => 'Name ',
+                 'email' => 'Email ',
+                 'password' => 'Password ',
+                 'confirm_password' => 'Confirm password '
 			]
         );
         $models = $this->create([
@@ -58,11 +58,11 @@ class Customer extends Authenticatable
 				'password' => 'required',
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
+				'required' => ':attribute is empty.',
 			],
 			[
                  'email' => 'Email',
-                 'password' => 'Mật khẩu',
+                 'password' => 'Password',
 			]
         );
 

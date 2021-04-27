@@ -20,14 +20,14 @@ class brand extends Model
 				'file'=>'required|max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute Đang bỏ trống.',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'name' => 'Tên',
-                 'file' =>'Ảnh'
+                 'name' => 'Name',
+                 'file' =>'Image'
 			]
 		);
     	$status = request()->status;
@@ -58,9 +58,9 @@ class brand extends Model
 				'file'=>'max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
                  'name' => 'Tên',

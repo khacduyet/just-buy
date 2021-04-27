@@ -32,12 +32,12 @@ class orders extends Model
                 'address' => 'required',
             ],
             [
-                'required' => ':attribute đang bỏ trống.',
+                'required' => ':attribute is empty.',
             ],
             [
-                 'name' => 'Họ và tên',
-                 'phone' => 'Số điện thoại',
-                 'address' => 'Địa chỉ',
+                 'name' => 'Name',
+                 'phone' => 'Phone',
+                 'address' => 'Address',
             ]
         );
         $id_cus = Auth::guard('customer')->user()->id;

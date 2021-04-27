@@ -1,11 +1,11 @@
 @extends('layout.client.index')
-@section('title','Đổi mật khẩu')
+@section('title','Change password')
 @section('content')
 <main>
 	<section class="content-contact pb-5 space-title">
 		<div class="container">
 			<h2 class="text-center">
-				<span class="title-big">Đổi mật khấu</span>
+				<span class="title-big">Change password</span>
             </h2>
 			<section class="s-content">
                 @if (session()->has('success'))
@@ -27,7 +27,7 @@
                             @csrf
 							<div class="row">
                                 <div class="col-12 form-group">
-									<label for="" >Mật khẩu cũ</label>
+									<label for="" >Old password </label>
                                     <input type="password" name="password_old" class="form-control" value="" id="" placeholder="Mật khẩu cũ">
                                     @error('password_old')
                                         <span class="error-message">{{$message}}</span>
@@ -37,21 +37,21 @@
                                     @endif
                                 </div>
                                 <div class="col-12 form-group">
-									<label for="" >Mật khẩu mới</label>
+									<label for="" >New password </label>
                                     <input type="password" name="password_new" class="form-control" value="" id="" placeholder="mật khẩu mới">
                                     @error('password_new')
                                         <span class="error-message">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="col-12 form-group">
-									<label for="" >Xác nhận mật khẩu</label>
+									<label for="" >Confirm password</label>
                                     <input type="password" name="confirm" class="form-control" value="" id="" placeholder="Xác nhận mật khẩu mới">
                                     @error('confirm')
                                         <span class="error-message">{{$message}}</span>
                                     @enderror
 								</div>
 								<div class="col-4 form-group">
-									<button type="submit" class="btn btn-lg btn-primary btn-lg-feb">Đổi mật khẩu</button>
+									<button type="submit" class="btn btn-lg btn-primary btn-lg-feb">Change Password</button>
                                 </div>
 							</div>
                         </form>

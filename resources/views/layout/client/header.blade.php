@@ -31,14 +31,14 @@
                         <span class="d-inline-block ml-2">{{Auth::guard('customer')->user()->name}}</span>
                     </a>
                     <a href="{{route('log-out')}}" class="border-left pl-2 c-fff">
-                        <span class="d-inline-block ml-2">Đăng xuất</span>
+                        <span class="d-inline-block ml-2">Logout</span>
                     </a>
                 @else
                     <a href="{{route('login_user')}}" class="pr-2  c-fff">
-                        <span class="d-inline-block ml-2">Đăng nhập</span>
+                        <span class="d-inline-block ml-2">Login</span>
                     </a>
                     <a href="{{route('register_user')}}" class="border-left pl-2 c-fff">
-                        <span class="d-inline-block ml-2">Đăng ký</span>
+                        <span class="d-inline-block ml-2">Register</span>
                     </a>
                 @endif
             </div>
@@ -49,12 +49,18 @@
             <div class="container">
                 <div class="row pl-5 pr-5">
                     <div class="col-lg-9 col-md-9 col-xs-12 d-none d-md-block d-lg-block">
-                        <a href="tel:091 668 1919" class="pline text-left c-feb hv-c-fff" title="091 668 1919">091 668 1919</a>
+                        <a href="" class="pline text-left c-feb hv-c-fff" title="">
+                        @foreach($config as $con)
+                            @if($con->name == 'phone')
+                              {!!$con->value!!}
+                            @endif
+                        @endforeach
+                        </a>
                     </div>
                     <div class="col-lg-3 col-md-3 col-xs-12 d-flex ">
                         <div class="fr-search text-right">
                             <form action="{{route('search')}}" method="get">
-                                <input type="text" name="key" placeholder="Tìm kiếm sản phẩm ..." value="">
+                                <input type="text" name="key" placeholder="Search product ..." value="">
                                 <button type="submit" value="search"></button>
                             </form>
                         </div>
@@ -85,14 +91,14 @@
                                 @endif
                             </table>
                             <div class="select-total">
-                                <span>Tổng:</span>
+                                <span>Total:</span>
                                 <span>
                                     <span class="d-inline-block ml-1">{{number_format($cart->total_amount)}} VND </span>
                                 </span>
                             </div>
                             <div class="select-button">
-                                <a href="{{route('cart')}}" class="btn btn-dark btn-lg">Giỏ hàng</a>
-                                <a href="{{route('checkout')}}" class="btn btn-lg btn-lg-feb">Thanh toán</a>
+                                <a href="{{route('cart')}}" class="btn btn-dark btn-lg">Cart</a>
+                                <a href="{{route('checkout')}}" class="btn btn-lg btn-lg-feb">Checkout</a>
                             </div>
                         </div>
                         @endif
@@ -107,11 +113,11 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <ul class="menu-left d-flex justify-content-center">
-                            <li><a href="{{route('home')}}" class="active">Trang chủ</a></li>
-                                <li><a href="{{route('about')}}">Giới thiệu</a></li>
+                            <li><a href="{{route('home')}}" class="active">Home</a></li>
+                                <li><a href="{{route('about')}}">About</a></li>
                                 <li>
                                     <i class="fa fa-angle-right"></i>
-                                    <a href="{{route('product')}}">Sản phẩm</a>
+                                    <a href="{{route('product')}}">Shop</a>
                                     <ul>
                                         @foreach($categories as $cat)
                                         <li><a href="{{route('cate-product',['slug'=>$cat->slug])}}" class="smooth">{{$cat -> name}}</a></li>
@@ -121,13 +127,13 @@
                             </ul>
                         </div>
                         <div class="col-lg-2">
-                            <a href="{{route('home')}}" title="" class="logo-word">Vĩnh lộc luxury</a>
+                            <a href="{{route('home')}}" title="" class="logo-word">JustBuy Luxury</a>
                         </div>
                         <div class="col-lg-5">
                             <ul class="menu-right d-flex justify-content-center">
-                                <li><a href="{{route('service')}}">Dịch vụ</a></li>
-                                <li><a href="{{route('construction')}}">Công trình</a></li>
-                                <li><a href="{{route('contact')}}">Liên hệ</a></li>
+                                <li><a href="{{route('service')}}">Service</a></li>
+                                <li><a href="{{route('construction')}}">Construction</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -150,7 +156,7 @@
                               <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
                               <div class="overlay-content">
                                 <form action="{{route('search')}}" method="get">
-                                <input type="text" name="key" placeholder="Tìm kiếm sản phẩm ..." value="">
+                                <input type="text" name="key" placeholder="Search product ..." value="">
                                 <button type="submit" value="search"></button>
                                 </form>
                               </div>
@@ -180,14 +186,14 @@
                                 @endif
                             </table>
                             <div class="select-total">
-                                <span>Tổng:</span>
+                                <span>Total:</span>
                                 <span>
                                     <span class="d-inline-block ml-1">{{number_format($cart->total_amount)}} VND </span>
                                 </span>
                             </div>
                             <div class="select-button">
-                                <a href="{{route('cart')}}" class="btn btn-dark btn-lg">Giỏ Hàng</a>
-                                <a href="{{route('checkout')}}" class="btn btn-lg-feb btn-lg">Thanh Toán</a>
+                                <a href="{{route('cart')}}" class="btn btn-dark btn-lg">Cart</a>
+                                <a href="{{route('checkout')}}" class="btn btn-lg-feb btn-lg">Checkout</a>
                             </div>
                         </div>
                         @endif
@@ -205,12 +211,12 @@
                             <span class="d-inline-block ml-2">{{Auth::guard('customer')->user()->name}}</span>
                         </a>
                         <a href="{{route('log-out')}}" class="border-left pl-2 c-fff">
-                            <span class="d-inline-block ml-2">Đăng xuất</span>
+                            <span class="d-inline-block ml-2">Logout</span>
                         </a>
                         @else
                             <i class="fas fa-sign-in-alt"></i>
-                            <span class="d-inline-block ml-2">Đăng nhập |</span>
-                            <span class="d-inline-block ml-2">Đăng Ký</span>
+                            <span class="d-inline-block ml-2">Login |</span>
+                            <span class="d-inline-block ml-2">Register</span>
                         @endif
 
                     </a>
@@ -220,25 +226,25 @@
                 </div>
                 <div class="mobile-search">
                     <form action="{{route('search')}}" method="get" accept-charset="utf-8">
-                        <input type="text" name="" placeholder="Tìm kiếm sản phẩm...">
+                        <input type="text" name="" placeholder="Search product...">
                         <button type=""><i class="fas fa-search"></i></button>
                     </form>
                 </div>
                 <ul>
-                    <li><a href="{{route('home')}}">Trang chủ</a></li>
-                    <li><a href="{{route('about')}}">Giới thiệu</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('about')}}">About</a></li>
                     <li>
                         <i class="change-down fa fa-angle-right"></i>
-                        <a href="{{route('product')}}">Sản phẩm</a>
+                        <a href="{{route('product')}}">Shop</a>
                         <ul>
                             @foreach($categories as $cat)
                             <li><a href="{{route('cate-product',['slug'=>$cat->slug])}}" class="smooth">{{$cat -> name}}</a></li>
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="{{route('service')}}">Dịch vụ</a></li>
-                    <li><a href="{{route('construction')}}">Cồng trình</a></li>
-                    <li><a href="{{route('contact')}}">Liên hệ</a></li>
+                    <li><a href="{{route('service')}}">Service</a></li>
+                    <li><a href="{{route('construction')}}">Construction</a></li>
+                    <li><a href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </div>
         </div>

@@ -1,5 +1,5 @@
 @extends('layout.client.index')
-@section('title','Vinh lộc - Trang chủ')
+@section('title','JustBuy - Home')
 @section('content')
 <main>
     <div class="container">
@@ -16,7 +16,7 @@
     <section class="cat-pro space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Các dòng sản phẩm</span>
+                <span class="title-big">Categories</span>
             </h2>
             <section class="slick1 pt-lg-5 pt-4 wow fadeInUp">
                @foreach($categories as $cate )
@@ -42,7 +42,7 @@
     <section class="representative space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Công trình tiêu biểu</span>
+                <span class="title-big">Typical projects</span>
             </h2>
             <div role="tabpanel" class="pt-lg-5 pt-4">
                 <ul class="nav nav-tabs" role="tablist">
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="desc d-none d-md-block d-lg-block">
                                     <h3>
-                                        <a title="CÁC DỰ ÁN NHÀ HÀNG VÀ KHÁCH SẠN NỔI BẬT ĐÃ ĐƯỢC VĨNH LỘC LUXURY THIẾT KẾ VÀ THI CÔNG">{{$value -> title}}</a>
+                                        <a title="{{$value -> title}}">{{$value -> title}}</a>
                                     </h3>
                                     <p class="c-fff f-14 row-4">{{$value -> des}}</p>
                                 </div>
@@ -92,7 +92,7 @@
                             </div>
                             <div class="desc d-none d-md-block d-lg-block">
                                 <h3>
-                                    <a title="CÁC DỰ ÁN NHÀ HÀNG VÀ KHÁCH SẠN NỔI BẬT ĐÃ ĐƯỢC VĨNH LỘC LUXURY THIẾT KẾ VÀ THI CÔNG">{{$value -> title}}</a>
+                                    <a title="{{$value -> title}}">{{$value -> title}}</a>
                                 </h3>
                                 <p class="c-fff f-14 row-4">{{$value -> des}}</p>
                             </div>
@@ -107,7 +107,7 @@
     <section class="hot-pro space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Sản phẩm mới nhất</span>
+                <span class="title-big">Latest product</span>
             </h2>
             <section class="slick3 pt-lg-5 pt-4 wow fadeInUp">
                 @foreach($productNew as $pro)
@@ -133,7 +133,7 @@
     <section class="share space-title">
         <div class="container">
             <h2 class="text-center pb-4">
-                <span class="title-big">Góc chia sẻ</span>
+                <span class="title-big">Shared corner</span>
             </h2>
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
@@ -180,7 +180,7 @@
     <section class="thumbs-cus space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Khách hàng tiêu biểu</span>
+                <span class="title-big">Typical customers</span>
             </h2>
             <section class="slick5 pt-lg-5 pt-4 pb-5 wow zoomIn">
                 @foreach($brand as $value)

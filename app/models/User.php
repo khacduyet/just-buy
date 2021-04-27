@@ -50,20 +50,20 @@ class User extends Authenticatable
 				'confirm_password'=>'required|same:password',
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'unique' => ':attribute đã tồn tại',
-				'min' => ':attribute ít nhất 6 kí tự',
-				'max' => ':attribute quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh',
-				'same' => ':attribute chưa trùng khớp',
+				'required' => ':attribute is empty.',
+				'unique' => ':attribute already exists',
+				'min' => ':attribute is too small',
+				'max' => ':attribute is too max',
+				'mimes' => 'Incorrect image format',
+				'same' => ':attribute does not match',
 			],
 			[
-                 'name' => 'Name',
-                 'email' => 'Email',
-                 'password' => 'Mật khẩu',
-                 'role' => 'Quyền',
-                 'confirm_password' => 'Mật khẩu xác nhận ',
-                 'file' =>'Ảnh'
+                 'name' => 'Name ',
+                 'email' => 'Email ',
+                 'password' => 'Password ',
+                 'role' => 'Role ',
+                 'confirm_password' => 'Confirm password  ',
+                 'file' =>'Image '
 			]
 		);
 		$roles = [];
@@ -174,20 +174,20 @@ class User extends Authenticatable
                 'conf_password'=>'required|same:password',
             ],
             [
-                'required' => ':attribute đang bỏ trống.',
-                'unique' => ':attribute đã tồn tại',
-                'min' => ':attribute ít nhất 6 kí tự',
-                'max' => ':attribute quá lớn',
-                'mimes' => 'Không đúng định dạng ảnh',
-                'same' => ':attribute chưa trùng khớp',
+                'required' => ':attribute is empty.',
+                'unique' => ':attribute already exists',
+                'min' => ':attribute must be over 6 characters',
+                'max' => ':attribute is too max',
+                'mimes' => 'Incorrect image format',
+                'same' => ':attribute does not match',
             ],
             [
-                 'name' => 'Name',
-                 'email' => 'Email',
-                 'password' => 'Mật khẩu',
-                 'role' => 'Quyền',
-                 'conf_password' => 'Mật khẩu xác nhận ',
-                 'file' =>'Ảnh'
+                 'name' => 'Name ',
+                 'email' => 'Email ',
+                 'password' => 'Password ',
+                 'role' => 'Role ',
+                 'conf_password' => 'Confirm password  ',
+                 'file' =>'Image '
             ]
         );
         if(request()->email != $id->email){
@@ -196,7 +196,7 @@ class User extends Authenticatable
                     'email' => 'unique:users',
                 ],
                 [
-                    'unique' => ':attribute đã tồn tại',
+                    'unique' => ':attribute is empty.',
                 ],
                 [
                      'email' => 'Email',
@@ -225,11 +225,11 @@ class User extends Authenticatable
 				'password' => 'required',
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
+				'required' => ':attribute is empty.',
 			],
 			[
                  'email' => 'Email',
-                 'password' => 'Mat khau',
+                 'password' => 'Password',
 			]
         );
         if (Auth::attempt(request()->only('email','password'))){

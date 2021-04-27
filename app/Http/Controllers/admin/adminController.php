@@ -46,9 +46,9 @@
 		public function store(Request $request,User $User){
             $model = $User->add();
 	        if ($User) {
-	            return redirect()->route('list-admin') -> with('success','Thêm mới thành công');
+	            return redirect()->route('list-admin') -> with('success','Inserted successful');
 	        }else{
-	            return redirect()->back()->with('message','Thêm mới thất bại' );
+	            return redirect()->back()->with('message','Insert fail' );
 	        }
 		}
 		// sửa dữ liệu
@@ -64,9 +64,9 @@
 		public function update(request $request,User $id){
 			$updated = $id->update_data($id);
 	       	if ($id) {
-	        	return redirect()->route('list-admin')->with('message','Sửa thành công');
+	        	return redirect()->route('list-admin')->with('message','Updated successful');
 	    	} else {
-                Session::flash('message', "Sửa không thành công");
+                Session::flash('message', "Updated fail");
 	     		return redirect()->back()->withInput();
 	    	}
 		}
@@ -76,9 +76,9 @@
 	    {
 	        $delete = $id->delete();
 	        if ($id) {
-	           return redirect()->route('list-admin') -> with('message','Xóa thành công');
+	           return redirect()->route('list-admin') -> with('message','Deleted successful');
 	       } else {
-	        return redirect()->back()->with('message','Xóa thất bại');
+	        return redirect()->back()->with('message','Delete fail');
 	       }
 	    }
 	    function login_admin(){
@@ -87,9 +87,9 @@
 		}
 		public function postLogin_admin(Request $request,User $user){
 			if($user->login()) {
-	            return redirect()->route('admin') -> with('message','Đăng nhập thành công');
+	            return redirect()->route('admin') -> with('message','Login successful');
 	        } else {
-	            return redirect()->back()->with('message','Đăng nhập thất bại' );
+	            return redirect()->back()->with('message','Login fail');
 	        }
 		}
 		public function logout_admin(){
@@ -102,9 +102,9 @@
 		public function update_profile(User $id, Request $req){
 			$updated = $id->update_profile($id);
 	       	if ($id) {
-	        	return redirect()->route('admin')->with('message','Sửa thành công');
+	        	return redirect()->route('admin')->with('message','Updated successful');
 	    	} else {
-                Session::flash('message', "Sửa không thành công");
+                Session::flash('message', "Updated fail");
 	     		return redirect()->back()->withInput();
 	    	}
 		}

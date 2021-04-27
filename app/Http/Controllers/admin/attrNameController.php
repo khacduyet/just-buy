@@ -33,9 +33,9 @@
 			]);
 			$attrName->add();
 	        if ($attrName) {
-	            return redirect()->route('list-attrName') -> with('message','Thêm mới thành công');
+	            return redirect()->route('list-attrName') -> with('message','Inserted successful');
 	        }else{
-	            return redirect()->back()->with('message','Thêm mới thất bại' );
+	            return redirect()->back()->with('message','Insert fail' );
 	        }
 		}
 		// sửa dữ liệu
@@ -48,9 +48,9 @@
 		public function update(request $request,attribute $id){
 			$id->update_data();
 	       	if ($id) {
-	        	return redirect()->route('list-attrName') -> with('message','Sửa thành công');
+	        	return redirect()->route('list-attrName') -> with('message','Updated successful');
 	    	} else {
-	     		return redirect()->back()->with('message','Sửa thất bại');
+	     		return redirect()->back()->with('message','Updated fail');
 	    	}
 		}
 		// xóa dữ liệu
@@ -60,9 +60,9 @@
 	        if ($id) {
 	        	$id->deleteProAtt($id);
 	        	$id->deleteAttValue($id);
-	           return redirect()->route('list-attrName') -> with('message','Xóa thành công');
+	           return redirect()->route('list-attrName') -> with('message','Deleted successful');
 	       } else {
-	        return redirect()->back()->with('message','Xóa thất bại');
+	        return redirect()->back()->with('message','Delete fail');
 	       }
 	    }
 	}

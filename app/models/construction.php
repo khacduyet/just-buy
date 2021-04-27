@@ -19,19 +19,18 @@ class construction extends Model
 				'title' => 'required',
 				'des' => 'required',
 				'file' => 'required',
-				// 'file'=>'required|max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'name' => 'Tên',
-                 'des' => 'Mô tả',
-                 'title' => 'Tiêu đề',
-                 'file' =>'Ảnh'
+                 'name' => 'Name',
+                 'des' => 'Description',
+                 'title' => 'Title',
+                 'file' =>'Image'
 			]
 		);
         $status = request()->status;
@@ -56,8 +55,6 @@ class construction extends Model
 			'status' => $status,
 		]);
 		$models -> save();
-
-		// dd($models);
 		return $models;
 
 	}
@@ -68,19 +65,18 @@ class construction extends Model
 				'name' => 'required',
 				'title' => 'required',
 				'des' => 'required',
-				// 'file'=>'required|max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'name' => 'Tên',
-                 'des' => 'Mô tả',
-                 'title' => 'Tiêu đề',
-                 'file' =>'Ảnh'
+                 'name' => 'Name',
+                 'des' => 'Description',
+                 'title' => 'Title',
+                 'file' =>'Image'
 			]
 		);
         $status = request()->status;
@@ -89,7 +85,6 @@ class construction extends Model
 	    }else{
 	    	$status = 0;
 	    }
-	    // $data[] = $con->image;
 		if(request()->hasFile('file')) {
 		    foreach(request()->file('file') as $img) {
 		        $image = $img->getClientOriginalName();
@@ -97,11 +92,9 @@ class construction extends Model
 
 		        $data[] = $image;
 		    }
-		    // dd($data);
 		}else{
 			$data = $con->image;
 		}
-		// die;
 		$updated = $this->update([
 			'name' => request()->name,
 			'des' => request()->des,
@@ -109,6 +102,5 @@ class construction extends Model
 			'image' => json_encode($data, JSON_FORCE_OBJECT),
 			'status' => $status,
 		]);
-		// $updated -> save();
 	}
 }

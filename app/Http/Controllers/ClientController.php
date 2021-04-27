@@ -47,7 +47,7 @@ class ClientController extends Controller {
     }
     public function product(Request $request) {
         $products = products::where('status',1)->paginate(8);
-        return view('pages.client.product',compact('products'));
+        return view('pages.client.shop',compact('products'));
     }
     public function service() {
         return view('pages.client.service');
@@ -148,21 +148,21 @@ class ClientController extends Controller {
                 'confirm' => 'required|same:password_new'
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-                'min' => ':attribute phải trên 6 ký tự',
-                'same' => ':attribute phải giống mật khẩu'
+				'required' => ':attribute is empty.',
+                'min' => ':attribute must be over 6 characters',
+                'same' => ':attribute must match the password'
 			],
 			[
-                'password_old' => 'Mật khẩu cũ',
-                 'password_new' => 'Mật khẩu mới',
-                 'confirm' => 'Xác nhận mật khẩu'
+                'password_old' => 'Old password ',
+                 'password_new' => 'New password ',
+                 'confirm' => 'Confirm password '
 			]
         );
         $customer= Customer::where('id',$id)->first();
         $password_old = Hash::make($request->password_old);
 
         if(!Hash::check($request->password_old,$customer->password)) {
-            Session::flash('message', "Mật khẩu cũ không đúng");
+            Session::flash('message', "Old password is not the same");
             return redirect()->back();
         } else {
             $customer->password = Hash::make($request->password_new);

@@ -21,17 +21,16 @@ class blog extends Model
 				'file'=>'required|max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'required' => ':attribute đã tồn tại.',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'name' => 'Tên',
-                 'des' => 'Mô tả',
-                 'content' => 'Nội dung',
-                 'file' =>'Ảnh'
+                 'name' => 'Name',
+                 'des' => 'Description',
+                 'content' => 'Content',
+                 'file' =>'Image'
 			]
 		);
 	    $image = '';
@@ -60,16 +59,16 @@ class blog extends Model
 				'file'=>'max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'name' => 'Tên',
-                 'des' => 'Mô tả',
-                 'content' => 'Nội dung',
-                 'file' =>'Ảnh'
+                 'name' => 'Name',
+                 'des' => 'Description',
+                 'content' => 'Content',
+                 'file' =>'Image'
 			]
 		);
 	    $image = '';

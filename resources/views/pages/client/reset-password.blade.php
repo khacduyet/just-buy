@@ -1,11 +1,11 @@
 @extends('layout.client.index')
-@section('title','Khôi phục mật khẩu')
+@section('title','Password recovery')
 @section('content')
 <main>
 	<section class="content-contact pb-5 space-title">
 		<div class="container">
 			<h2 class="text-center">
-				<span class="title-big">Đổi mật khẩu</span>
+				<span class="title-big">Change Password</span>
             </h2>
 			<section class="s-content">
             <div class="row">
@@ -23,22 +23,22 @@
                                 <input type="email" name="email" class="form-control" value="{{$email}}" id="" placeholder="Email" style="pointer-events: none;">
                             </div>
                             <div class="col-12  form-group">
-                                <label for="">Mật khẩu mới</label>
-                                <input type="password" name="password_new" class="form-control" id="" placeholder="Mật Khẩu">
+                                <label for="">New password</label>
+                                <input type="password" name="password_new" class="form-control" id="" placeholder="Password">
                                 @error('password_new')
                                     <span class="error-message">{{$message}}</span>
                                 @enderror
                             </div>
                             <div class="col-12  form-group">
-                                <label for="">Nhập lại mật khẩu mới</label>
-                                <input type="password" name="confirm_password_new" class="form-control" id="" placeholder="Xác nhận mật khẩu">
+                                <label for="">Enter a new password</label>
+                                <input type="password" name="confirm_password_new" class="form-control" id="" placeholder="Confirm password ">
                                 @error('confirm_password_new')
                                     <span class="error-message">{{$message}}</span>
                                 @enderror
                             </div>
                             <input type="hidden" name="code" value="{{$code}}">
                             <div class="col-4 form-group">
-                                <button type="submit" class="btn btn-lg btn-primary btn-lg-feb">Đổi mật khẩu</button>
+                                <button type="submit" class="btn btn-lg btn-primary btn-lg-feb">Change Password</button>
                             </div>
                         </div>
                     </form>

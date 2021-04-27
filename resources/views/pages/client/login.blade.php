@@ -1,11 +1,11 @@
 @extends('layout.client.index')
-@section('title','Đăng nhập')
+@section('title','Login')
 @section('content')
 <main>
 	<section class="content-contact pb-5 space-title">
 		<div class="container">
 			<h2 class="text-center">
-				<span class="title-big">Đăng nhập</span>
+				<span class="title-big">Login</span>
             </h2>
 			<section class="s-content">
                 @if (session()->has('success'))
@@ -34,7 +34,7 @@
                                    @enderror
 								</div>
 								<div class="col-12  form-group">
-									<label for="">Mật khẩu	</label>
+									<label for="">Password	</label>
                                     <input type="password" name="password" class="form-control" id="" placeholder="Password">
                                     @error('password')
                                     <span class="error-message">{{$message}}</span>
@@ -44,13 +44,13 @@
                                 @endif
                                 </div>
 								<div class="col-lg-12 col-xs-12 form-group">
-									<button type="submit" name="submit" class="btn btn-lg btn-primary btn-lg-feb">Đăng nhập</button>
+									<button type="submit" name="submit" class="btn btn-lg btn-primary btn-lg-feb">Login</button>
                                 </div>
                                 <div class="col-lg-12 col-sx-12">
-									<p class="sugges">Nếu chưa có tài khoản vui lòng <a href="{{route('register_user')}}"> Đăng ký</a></p>
+									<p class="sugges">If you don't have an account, please <a href="{{route('register_user')}}"> Register</a></p>
                                 </div>
                                 <div class="form-group col-12">
-                                    <p class="forget-pass"><a href="{{route('forget-pass')}}">Quên mật khẩu</a></p>
+                                    <p class="forget-pass"><a href="{{route('forget-pass')}}">Forgot password</a></p>
                                 </div>
 							</div>
 						</form>

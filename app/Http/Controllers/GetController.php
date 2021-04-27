@@ -23,13 +23,13 @@ class GetController extends Controller
 	    		echo '<h3>';
 	    		echo "<a href='".route('product-detail',['slug'=>$value->slug])."' title='' class='c-fff text-uppercase f-16'>$value->name</a>";
 	    		echo '</h3>';
-	    		echo "<span class='c-feb f-16 text-uppercase'>Giá : ".number_format ($value->price)."</span>";
+	    		echo "<span class='c-feb f-16 text-uppercase'>Price : ".number_format ($value->price)."</span>";
 	    		echo "<a href='' class='add-cart'><img src='".url('public')."/frontend/images/icon/ic-cart-feb.png' alt=''></a>";
 	    		echo '</div></div></div></div>';
 	    	}
 		}
 		else{
-			echo '<div class="col-12 desc text-center c-fff">Không tìm thấy sản phẩm';
+			echo '<div class="col-12 desc text-center c-fff">Not found';
 			echo '</div>';
 		}
 
@@ -52,13 +52,13 @@ class GetController extends Controller
 				echo '<h3>';
 				echo "<a href='".route('product-detail',['slug'=>$value->slug])."' title='' class='c-fff text-uppercase f-16'>$value->name</a>";
 				echo '</h3>';
-				echo "<span class='c-feb f-16 text-uppercase'>Giá : ".number_format ($value->price)."</span>";
+				echo "<span class='c-feb f-16 text-uppercase'>Price : ".number_format ($value->price)."</span>";
 				echo "<a href='' class='add-cart'><img src='".url('public')."/frontend/images/icon/ic-cart-feb.png' alt=''></a>";
 				echo '</div></div></div></div>';
 			}
 		}
 		else{
-			echo '<div class="col-12 desc text-center c-fff">Không tìm thấy sản phẩm';
+			echo '<div class="col-12 desc text-center c-fff">Not found';
 			echo '</div>';
 		}
 
@@ -86,7 +86,7 @@ class GetController extends Controller
 				echo '<h3>';
 				echo "<a href='".route('product-detail',['slug'=>$value->slug])."' title='' class='c-fff text-uppercase f-16'>$value->name</a>";
 				echo '</h3>';
-				echo "<span class='c-feb f-16 text-uppercase'>Giá : ".number_format ($value->price)."</span>";
+				echo "<span class='c-feb f-16 text-uppercase'>Price : ".number_format ($value->price)."</span>";
 				echo "<a href='' class='add-cart'><img src='".url('public')."/frontend/images/icon/ic-cart-feb.png' alt=''></a>";
 				echo '</div></div></div></div>';
 			}

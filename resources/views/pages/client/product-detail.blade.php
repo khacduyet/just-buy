@@ -5,7 +5,7 @@
     <section class="contain-pro-detail">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big c-fff">Chi tiết sản phẩm</span>
+                <span class="title-big c-fff">Product details</span>
             </h2>
             <section class="pro-detail pt-4">
                 <div class="row">
@@ -21,7 +21,7 @@
                         <div class="s-content">
                             <h1 class="c-fff f-24 text-uppercase">{{$pro -> name}}</h1>
                             <span class="c-feb font-weight-bold f-18">
-                               Giá sản phẩm:  {{number_format ($pro -> price)}} VNĐ
+                               Price:  {{number_format ($pro -> price)}} VNĐ
                             </span>
                             <ul>
                                 @foreach($uniqueAttributes as $key => $value)
@@ -37,13 +37,13 @@
                                 </li>
                                 @endforeach
                                 <li>
-                                    <span class="tb1">Ứng dụng : </span>
+                                    <span class="tb1">Description: </span>
                                     <ul>
                                         <li class="tb2">{{$pro->des}}</li>
                                     </ul>
                                 </li>
                             </ul>
-                            <a href="{{ Route('add_cart',['id'=>$pro->id]) }}" title="" class="btn btn-lg-feb btn-cart">Thêm vào giỏ hàng</a>
+                            <a href="{{ Route('add_cart',['id'=>$pro->id]) }}" title="" class="btn btn-lg-feb btn-cart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
     <section class="hot-pro space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Sản phẩm mới nhất</span>
+                <span class="title-big">Latest product</span>
             </h2>
             <section class="slick3 pt-lg-5 pt-4 wow fadeInUp">
                 @foreach($productNew as $pro)
@@ -78,7 +78,7 @@
     <section class="thumbs-cus space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Khách hàng tiêu biểu</span>
+                <span class="title-big">Typical customers</span>
             </h2>
             <section class="slick5 pt-lg-5 pt-4 pb-5 wow zoomIn">
                 @foreach($brand as $value)
@@ -86,7 +86,6 @@
                     <a href="" title="" class="avt">
                         <img src="{{asset('public/Uploads')}}/{{$value -> image}}" alt="">
                     </a>
-
                 </div>
                 @endforeach
             </section>

@@ -34,9 +34,9 @@
 
 			$model = $categories->add();
 	        if ($categories) {
-	            return redirect()->route('list-categories') -> with('message','Thêm mới thành công');
+	            return redirect()->route('list-categories') -> with('message','Inserted successful');
 	        }else{
-	            return redirect()->back()->with('message','Thêm mới thất bại' );
+	            return redirect()->back()->with('message','Insert fail' );
 	        }
 		}
 		// sửa dữ liệu
@@ -49,9 +49,9 @@
 		public function update(request $request,categories $id){
 			$updated = $id->update_data($id);
 	       	if ($id) {
-	        	return redirect()->route('list-categories') -> with('message','Sửa thành công');
+	        	return redirect()->route('list-categories') -> with('message','Updated successful');
 	    	} else {
-	     		return redirect()->back()->with('message','Sửa không thành công');
+	     		return redirect()->back()->with('message','Updated fail');
 	    	}
 		}
 		// xóa dữ liệu
@@ -60,9 +60,9 @@
 	        $delete = $id->delete();
 	        if ($id) {
 	        	$id -> deletePro($id);
-	           return redirect()->route('list-categories') -> with('message','Xóa thành công');
+	           return redirect()->route('list-categories') -> with('message','Deleted successful');
 	       } else {
-	        return redirect()->back()->with('message','Xóa thành công');
+	        return redirect()->back()->with('message','Delete fail');
 	       }
 	    }
 	}

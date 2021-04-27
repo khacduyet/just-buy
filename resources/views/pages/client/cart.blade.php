@@ -1,23 +1,23 @@
 @extends('layout.client.index')
-@section('title','Giỏ hàng')
+@section('title','Cart')
 @section('content')
 <main>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 	<section class="container cart space-title">
 		<h2 class="text-center title-cart mb-5">
-			<span class="title-big">Giỏ Hàng</span>
+			<span class="title-big">Cart</span>
 		</h2>
 		@if($cart -> items)
 		<div class="cart-table table-responsive">
 			<table class="table-bordered">
 				<thead>
 					<tr>
-						<th>Ảnh</th>
-						<th>Tên sản phẩm</th>
-						<th>Giá</th>
-						<th>Số lượng</th>
-						<th>Tổng</th>
-						<th>Xóa</th>
+						<th>Image</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Total</th>
+						<th>Delete</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -30,13 +30,11 @@
 						<td class="cart-pic">
 							<a href="">
                             <img src="{{ asset('public/Uploads/products') }}/{{$item['image']}}" alt="error">
-                            <!-- <img src="{{url('public')}}/frontend/images/product/8b1b1592df0d3953601c.jpg" alt="error"> -->
 							</a>
 						</td>
 						<td class="">
 							<a href="">
 								<p>{{$item['name']}}</p>
-								<!-- <p>Den chum</p> -->
 							</a>
 						</td>
                     <td class="price-root"><span id="price-{{$item['id']}}">{{number_format($item['price'])}}</span> VNĐ</td>
@@ -61,25 +59,25 @@
 			<div class="col-lg-4">
 				<div class="discount-coupon">
 					<div class="cart-buttons">
-						<a href="{{route('product')}}" class="btn continue-shop mb-3">Tiếp tục mua sắm</a>
-						<a href="{{route('clear-cart')}}" class="btn d-inline-block clear-cart mb-3" onclick="return confirm('Xác nhận xoá ?')">Xóa giỏ hàng</a>
+						<a href="{{route('product')}}" class="btn continue-shop mb-3">Continue to shop</a>
+						<a href="{{route('clear-cart')}}" class="btn d-inline-block clear-cart mb-3" onclick="return confirm('Confirm deletion ?')">Delete cart</a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4 offset-lg-4">
 				<div class="proceed-checkout">
 					<ul>
-						<li class="subtotal">Số lượng sản phẩm <span class="sumCa" id="total-number-product">{{$cart->total_quantity}}</span></li>
-						<li class="cart-total">Tổng tiền <span class="sumCa"><strong id="total-amount">{{number_format($cart->total_amount)}}</strong> VND</span></li>
+						<li class="subtotal">Quantity<span class="sumCa" id="total-number-product">{{$cart->total_quantity}}</span></li>
+						<li class="cart-total">Total <span class="sumCa"><strong id="total-amount">{{number_format($cart->total_amount)}}</strong> VND</span></li>
 					</ul>
-					<a href="{{route('checkout')}}" class="proceed-btn">Thanh toán</a>
+					<a href="{{route('checkout')}}" class="proceed-btn">Checkout</a>
 				</div>
 			</div>
 		</div>
 		@else
 		<div class="panel-body mb-5">
             <div class="alert alert-danger">
-                <strong>Giỏ hàng của bạn đang trống!</strong> Nhấn <a href="{{route('product')}}">vào đây</a> để mua hàng ....
+                <strong>Your cart is empty!</strong> Click <a href="{{route('product')}}">here</a> to purchase....
             </div>
         </div>
 		@endif

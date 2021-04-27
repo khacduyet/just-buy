@@ -19,12 +19,12 @@ class config extends Model
 				'value' => 'required',
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'unique' => ':attribute đã tồn tại.',
+				'required' => ':attribute is empty.',
+				'unique' => ':attribute already exists.',
 			],
 			[
-                 'name' => 'Tên',
-                 'value' => 'Giá trị',
+                 'name' => 'Name',
+                 'value' => 'Value',
 			]
 		);
 		 $models = $this->create([
@@ -41,10 +41,10 @@ class config extends Model
 				'value' => 'required',
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
+				'required' => ':attribute is empty.',
 			],
 			[
-                 'value' => 'Giá trị',
+                 'value' => 'Value',
 			]
 		);
 		$updated = $this->update([

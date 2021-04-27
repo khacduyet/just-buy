@@ -1,11 +1,11 @@
 @extends('layout.client.index')
-@section('title','Đăng ký')
+@section('title','Register')
 @section('content')
 <main>
     <section class="content-contact pb-5 space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Đăng ký</span>
+                <span class="title-big">Register</span>
             </h2>
             <section class="s-content">
                 <div class="row">
@@ -14,8 +14,8 @@
                             @csrf
                             <div class="row border-2 m-0 pt-5 pb-5">
                                 <div class="col-12 form-group">
-                                    <label for="" >Họ và tên</label>
-                                    <input type="text" name="name" class="form-control" value="{{old('name')}}"  id="" placeholder="Họ và tên">
+                                    <label for="" >Full Name</label>
+                                    <input type="text" name="name" class="form-control" value="{{old('name')}}"  id="" placeholder="Full Name">
                                     @error('name')
                                         <span class="error-message">{{$message}}</span>
                                     @enderror
@@ -28,21 +28,21 @@
                                     @enderror
                                 </div>
                                 <div class="col-12 form-group">
-                                    <label for="" >Số điện thoại</label>
-                                    <input type="text" name="phone" class="form-control" value="{{old('phone')}}" id="" placeholder="Số điện thoại">
+                                    <label for="" >Phone</label>
+                                    <input type="text" name="phone" class="form-control" value="{{old('phone')}}" id="" placeholder="Phone">
                                     @error('phone')
                                         <span class="error-message">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="col-12  form-group">
-                                    <label for="">Mật khẩu	</label>
+                                    <label for="">Password	</label>
                                     <input type="password" name="password" class="form-control" id="" placeholder="Password">
                                     @error('password')
                                         <span class="error-message">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="col-12  form-group">
-                                    <label for="">Nhập lại mật khẩu	</label>
+                                    <label for="">Confirm password 	</label>
                                     <input type="password" name="confirm_password" class="form-control" id="" placeholder="Confirm password">
                                     @error('confirm_password')
                                         <span class="error-message">{{$message}}</span>
@@ -50,10 +50,10 @@
                                 </div>
 
                                 <div class="col-lg-12 col-xs-12  form-group">
-                                    <button type="submit" name="submit" class="btn btn-lg btn-primary btn-lg-feb">Đăng ký </button>
+                                    <button type="submit" name="submit" class="btn btn-lg btn-primary btn-lg-feb">Register </button>
                                 </div>
                                 <div class="col-lg-12 col-xs-12">
-                                    <p class="sugges">Nếu đã có tài khoản vui lòng <a href="{{route('login_user')}}">Đăng nhập</a></p>
+                                    <p class="sugges">If you already have an account please <a href="{{route('login_user')}}">Login</a></p>
                                 </div>
                             </div>
                         </form>

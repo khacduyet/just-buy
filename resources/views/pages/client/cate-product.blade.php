@@ -33,7 +33,7 @@
                 @else
                 <div class="desc text-center">
                     <h3>
-                        <p class="c-fff text-uppercase f-16">Không tìm thấy sản phẩm theo danh mục {{$cate -> name}}</p>
+                        <p class="c-fff text-uppercase f-16">Cannot find product under category {{$cate -> name}}</p>
                     </h3> 
                 </div>
                 @endif
@@ -43,7 +43,7 @@
     <section class="thumbs-cus space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Khách hàng tiêu biểu</span>
+                <span class="title-big">Typical customers</span>
             </h2>
             <section class="slick5 pt-lg-5 pt-4 pb-5 wow zoomIn">
                 @foreach($brand as $value)

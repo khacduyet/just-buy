@@ -36,7 +36,7 @@
 		public function post_checkout(Request $request,Cart $cart,Orders $orders, order_detail $order_detail){
 			$orders -> add($cart);
 			$cart->clear();
-			return Redirect() -> route('my-account') -> with('success','Đặt hàng thành công');
+			return Redirect() -> route('my-account') -> with('success','Order Success');
 			
 		}
 		public function error(){

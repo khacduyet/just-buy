@@ -44,9 +44,9 @@
 		public function store(Request $request,config $config){
 			$model = $config->add();
 	        if ($config) {
-	            return redirect()->route('list-config') -> with('message','Thêm mới thành công');
+	            return redirect()->route('list-config') -> with('message','Inserted successful');
 	        }else{
-	            return redirect()->back()->with('message','Thêm thất bại' );
+	            return redirect()->back()->with('message','Insert fail' );
 	        }
 		}
 		// sửa dữ liệu
@@ -60,9 +60,9 @@
 		public function update(request $request,config $id){
 			$updated = $id->update_data($id);
 	       	if ($id) {
-	        	return redirect()->route('admin') -> with('message','Sửa thành công');
+	        	return redirect()->route('admin') -> with('message','Updated successful');
 	    	} else {
-	     		return redirect()->back()->with('message','Sửa thất bại');
+	     		return redirect()->back()->with('message','Updated fail');
 	    	}
 		}
 
@@ -71,9 +71,9 @@
 	    {
 	        $delete = $id->delete();
 	        if ($id) {
-	           return redirect()->route('list-config') -> with('message','Xóa thành công');
+	           return redirect()->route('list-config') -> with('message','Deleted successful');
 	       } else {
-	        return redirect()->back()->with('message','Xóa thất bại');
+	        return redirect()->back()->with('message','Delete fail');
 	       }
 	    }
 	}

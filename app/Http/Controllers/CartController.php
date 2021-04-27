@@ -27,7 +27,7 @@ class CartController extends Controller
         if($models){
             $cart -> add($models);
 
-            return redirect() -> route('cart') -> with('success','Thêm vào giỏ hàng thành công');
+            return redirect() -> route('cart') -> with('success','Add to cart successfully');
         }else{
             return redirect() -> back();
         }
@@ -42,7 +42,7 @@ class CartController extends Controller
     function delete_cart($id,Cart $cart){
         $cart -> delete($id);
 
-        return redirect() -> back() -> with('success','Xóa thành công');
+        return redirect() -> back() -> with('success','Deleted successful');
     }
 
     function update_cart($id,Cart $cart){
@@ -51,6 +51,6 @@ class CartController extends Controller
     }
     function clear_cart(Cart $cart){
         $cart -> clear();
-        return redirect() -> route('cart') -> with('success','Xóa thành công');
+        return redirect() -> route('cart') -> with('success','Deleted successful');
     }
 }

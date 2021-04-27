@@ -33,9 +33,9 @@
 		public function store(Request $request,brand $brand){
 			$model = $brand->add();
 	        if ($brand) {
-	            return redirect()->route('list-brand') -> with('message','Thêm mới thành công');
+	            return redirect()->route('list-brand') -> with('message','Inserted successful');
 	        }else{
-	            return redirect()->back()->with('message','Thêm mới thất bại' );
+	            return redirect()->back()->with('message','Insert fail' );
 	        }
 		}
 		// sửa dữ liệu
@@ -48,9 +48,9 @@
 		public function update(request $request,brand $id){
 			$updated = $id->update_data($id);
 	       	if ($id) {
-	        	return redirect()->route('list-brand') -> with('message','Sửa thành công');
+	        	return redirect()->route('list-brand') -> with('message','Updated successful');
 	    	} else {
-	     		return redirect()->back()->with('message','Sửa thất bại');
+	     		return redirect()->back()->with('message','Updated fail');
 	    	}
 		}
 
@@ -59,9 +59,9 @@
 	    {
 	        $delete = $id->delete();
 	        if ($id) {
-	           return redirect()->route('list-brand') -> with('message','Xóa thành công');
+	           return redirect()->route('list-brand') -> with('message','Deleted successful');
 	       } else {
-	        return redirect()->back()->with('message','Xóa thất bại');
+	        return redirect()->back()->with('message','Delete fail');
 	       }
 	    }
 	}

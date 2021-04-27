@@ -1,5 +1,5 @@
 @extends('layout.client.index')
-@section('title','Giới thiệu')
+@section('title','About')
 @section('content')
 <main>
     <div class="container">
@@ -15,7 +15,7 @@
     <section class="content-about space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Về chúng tôii</span>
+                <span class="title-big">About us</span>
             </h2>
             <section class="s-content word-about">
                 @foreach($config as $con)
@@ -29,7 +29,7 @@
     <section class="hot-pro space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Sản phẩm mới nhất</span>
+                <span class="title-big">Latest product</span>
             </h2>
             <section class="slick3 pt-lg-5 pt-4 wow fadeInUp">
                 @foreach($productNew as $pro)
@@ -54,7 +54,7 @@
     <section class="thumbs-cus space-title">
         <div class="container">
             <h2 class="text-center">
-                <span class="title-big">Khách hàng tiêu biểu</span>
+                <span class="title-big">Typical customers</span>
             </h2>
              <section class="slick5 pt-lg-5 pt-4 pb-5 wow zoomIn">
                 @foreach($brand as $value)

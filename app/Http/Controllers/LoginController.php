@@ -32,7 +32,7 @@ class LoginController extends Controller
     public function postRegister(Request $request,Customer $user) {
         $user->register();
         if ($user) {
-            return redirect()->route('login_user') -> with('success','Đăng ký thành công');
+            return redirect()->route('login_user') -> with('success','Success');
         }else{
             return redirect()->back()->withInput();
         }
@@ -44,16 +44,16 @@ class LoginController extends Controller
     public function postLogin(Request $request,Customer $user) {
         if($user->login()) {
             $user->login();
-            return redirect()->route('product')->with('success','Đăng nhập thành công');
+            return redirect()->route('product')->with('success','Success');
         } else {
-            Session::flash('message', "Email hoặc mật khẩu không đúng");
+            Session::flash('message', "Email or password is incorrect");
             return Redirect::back()->withInput();
         }
 
     }
     public function postLogOut(Request $request,Customer $user){
         $user->logout();
-        return redirect()->route('login_user') -> with('success','Mời đăng nhập lại');
+        return redirect()->route('login_user') -> with('success','Please login again');
     }
 
     public function forget_pass() {
@@ -65,7 +65,7 @@ class LoginController extends Controller
         $checkUser = Customer::where('email',$email)->first();
 
         if(!$checkUser) {
-            Session::flash('message', "Email không tồn tại");
+            Session::flash('message', "Email does not exist");
             return redirect()->back();
         }
 
@@ -83,9 +83,9 @@ class LoginController extends Controller
 
         Mail::send('pages.client.email-reset',$data,function($message) use ($checkUser){
             $message->from('justbuy.bkap@gmail.com');
-            $message->to($checkUser->email,'Tin nhắn hệ thống vinh loc !')->subject('Khôi phục mật khẩu');
+            $message->to($checkUser->email,'System Message Justbuy!')->subject('Password recovery');
         });
-        return redirect()->back()->with('success','Link đã được gửi vào email của bạn');
+        return redirect()->back()->with('success','The link has been sent to your email');
     }
 
     public function resetPassword(Request $request) {
@@ -97,7 +97,7 @@ class LoginController extends Controller
             'email' => $email
         ])->first();
         if(!$checkUser) {
-            return redirect('/')->with('danger','Đường dẫn lấy lại mật khẩu không đúng,vui lòng thử lại !');
+            return redirect('/')->with('danger','The password reset path is incorrect, please try again!');
         }
 
         return view('pages.client.reset-password',compact('email','code'));
@@ -109,13 +109,13 @@ class LoginController extends Controller
 				'confirm_password_new' => 'required|same:password_new',
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-                'min' => ':attribute phải trên 6 ký tự',
-                'same' => ':attribute phải giống mật khẩu'
+				'required' => ':attribute is empty.',
+                'min' => ':attribute must be over 6 characters',
+                'same' => ':attribute must match the password'
 			],
 			[
-                 'password_new' => 'Mật khẩu',
-                 'confirm_password_new' => 'Xác nhận mật khẩu'
+                 'password_new' => 'Password ',
+                 'confirm_password_new' => 'Confirm password '
 			]
         );
 
@@ -127,12 +127,12 @@ class LoginController extends Controller
         ])->first();
 
         if(!$checkUser) {
-            return redirect('/')->with('danger','Đường dẫn lấy lại mật khẩu không đúng,vui lòng thử lại !');
+            return redirect('/')->with('danger','The password reset path is incorrect, please try again!');
         }
 
         $checkUser->password = Hash::make($request->password_new);
         $checkUser->save();
 
-        return redirect('/account/login')->with('success','Đổi mật khẩu thành công mời bạn đăng nhập');
+        return redirect('/account/login')->with('success','Password successfully changed, please login');
     }
 }

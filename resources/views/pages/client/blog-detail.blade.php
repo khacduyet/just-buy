@@ -7,8 +7,8 @@
 			<div class="col-lg-8 col-xs-12">
 				<h1>{{$detail -> name}}</h1>
 				<img src="{{asset('public/Uploads')}}/{{$detail -> image}}"
-					alt="3 PHONG CÁCH ĐÈN NỘI THẤT KHÔNG BAO GIỜ LỖI THỜI"
-					title="3 PHONG CÁCH ĐÈN NỘI THẤT KHÔNG BAO GIỜ LỖI THỜI" class="img_item">
+					alt="{{$detail -> name}}"
+					title="{{$detail -> name}}" class="img_item">
 				<div class="word-ctent s-content">
 					 {!!$detail->content!!}
 				</div>
@@ -19,7 +19,7 @@
 					<div class="box">
 						<a href="{{route('blog-detail',['slug'=>$value->slug])}}" class="smooth hv-scale">
 							<img src="{{asset('public/Uploads')}}/{{$value -> image}}"
-								alt="lỗi" title="" class="img-fluid" />
+								alt="error" title="" class="img-fluid" />
 						</a>
 						<div class="desc">
 							<a href="{{route('blog-detail',['slug'=>$value->slug])}}" title="" class="c-feb f-16 row-1">{{$value -> name}}</a>
@@ -36,7 +36,7 @@
 	<section class="thumbs-cus space-title">
 		<div class="container">
 			<h2 class="text-center">
-				<span class="title-big">Khách hàng tiêu biểu</span>
+				<span class="title-big">Typical customers</span>
 			</h2>
 			 <section class="slick5 pt-lg-5 pt-4 pb-5 wow zoomIn">
                 @foreach($brand as $value)

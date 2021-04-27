@@ -24,16 +24,16 @@ class banner extends Model
 				'file'=>'required|max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'name' => 'Tên banner',
-                 'location' => 'Vị trí',
-                 'link' => 'Đường dẫn',
-                 'file' =>'Ảnh'
+                 'name' => 'Name banner',
+                 'location' => 'Position',
+                 'link' => 'Link',
+                 'file' =>'Image'
 			]
 		);
     	$status = request()->status;
@@ -68,16 +68,16 @@ class banner extends Model
 				'file'=>'max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute đang bỏ trống.',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'name' => 'Tên banner',
-                 'location' => 'Vị trí',
-                 'link' => 'Đường dẫn',
-                 'file' =>'Ảnh'
+                 'name' => 'Name banner',
+                 'location' => 'Postion',
+                 'link' => 'Link',
+                 'file' =>'Image'
 			]
 		);
     	$status = request()->status;

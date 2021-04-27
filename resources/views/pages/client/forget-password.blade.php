@@ -1,11 +1,11 @@
 @extends('layout.client.index')
-@section('title','Quên mật khẩu')
+@section('title','Forgot password')
 @section('content')
 <main>
 	<section class="content-contact pb-5 space-title">
 		<div class="container">
 			<h2 class="text-center">
-				<span class="title-big">Quên mật khẩu</span>
+				<span class="title-big">Forgot password</span>
             </h2>
 			<section class="s-content">
                 @if (session()->has('success'))
@@ -19,7 +19,7 @@
 				<div class="row">
 					<div class="d-md-block col-md-4 col-lg-4 pt-lg-5 pt-4">
 						<div class="forget-title">
-                            Vui lòng cung cấp địa chỉ email đăng ký tài khoản
+							Please provide your email address for account registration
 						</div>
                     </div>
 					<div class="col-md-8 col-lg-8 pt-lg-5 pt-4">
@@ -34,7 +34,7 @@
                                     @endif
 								</div>
 								<div class="col-4 form-group">
-									<button type="submit" class="btn btn-lg btn-primary btn-lg-feb">Xác nhận</button>
+									<button type="submit" class="btn btn-lg btn-primary btn-lg-feb">Confirm</button>
                                 </div>
 							</div>
                         </form>

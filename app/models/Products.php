@@ -25,20 +25,20 @@ class Products extends Model
                 'file'=>'required|max:10000|mimes:jpg,jpeg,png,gif',
 			],
 			[
-				'required' => ':attribute Đang bỏ trống.',
-				'unique' => ':attribute đã tồn tại',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'unique' => ':attribute already exists',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'code' => 'Mã sản phẩm',
-                 'name' => 'Tên',
-                 'image' => 'Ảnh',
-                 'price' => 'Giá',
-                 'descriptions' => 'Mô tả',
-                 'cate_id' => 'Loại sản phẩm',
-                 'file' =>'Ảnh',
+                 'code' => 'Code',
+                 'name' => 'Name',
+                 'image' => 'Image',
+                 'price' => 'Price',
+                 'descriptions' => 'Description',
+                 'cate_id' => 'Category',
+                 'file' =>'Image',
 			]
 		);
         $status = request()->status;
@@ -88,19 +88,19 @@ class Products extends Model
 				'file'=>'max:10000|mimes:jpg,jpeg,png,gif'
 			],
 			[
-				'required' => ':attribute Đang bỏ trống.',
-				'unique' => ':attribute đã tồn tại',
-				'min' => ':attribute chưa được chọn',
-				'max' => 'Cỡ ảnh quá lớn',
-				'mimes' => 'Không đúng định dạng ảnh'
+				'required' => ':attribute is empty.',
+				'unique' => ':attribute already exists',
+				'min' => ':attribute is too small',
+				'max' => 'Size image is too max',
+				'mimes' => 'Incorrect image format'
 			],
 			[
-                 'name' => 'Tên',
-                 'image' => 'Ảnh',
-                 'price' => 'Giá',
-                 'descriptions' => 'Mô tả',
-                 'cate_id' => 'Loại sản phẩm',
-                 'file' =>'Ảnh'
+                 'name' => 'Name',
+                 'image' => 'Image',
+                 'price' => 'Price',
+                 'descriptions' => 'Description',
+                 'cate_id' => 'Category',
+                 'file' =>'Image'
 			]
 		);
 		if(request()->code != $pro->code){
@@ -109,10 +109,10 @@ class Products extends Model
 					'code' => 'required|unique:products'
 				],
 				[
-					'unique' => ':attribute đã tồn tại',
+					'unique' => ':attribute already exists',
 				],
 				[
-	                 'code' => 'Mã sản phẩm',
+	                 'code' => 'Code',
 				]
 			);
 		}

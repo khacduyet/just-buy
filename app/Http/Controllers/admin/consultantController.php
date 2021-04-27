@@ -26,17 +26,17 @@
 		public function store(Request $request,consultant $consultant){
 			$model = $consultant->add();
 	        if ($consultant) {
-	            return redirect()->back() -> with('message','Đăng ký thành công');
+	            return redirect()->back() -> with('message','Inserted successful');
 	        }else{
-	            return redirect()->back()->with('message','Đăng ký thất bại!' );
+	            return redirect()->back()->with('message','Insert fail' );
 	        }
 		}
 		public function update(request $request,consultant $id){
 			$updated = $id->update_data();
 	       	if ($id) {
-	        	return redirect()->route('list-consultant') -> with('message','Sửa thành công');
+	        	return redirect()->route('list-consultant') -> with('message','Updated successful');
 	    	} else {
-	     		return redirect()->back()->with('message','Sửa thất bại');
+	     		return redirect()->back()->with('message','Updated fail');
 	    	}
 		}
 	}

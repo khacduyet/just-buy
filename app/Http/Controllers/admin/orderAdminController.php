@@ -40,9 +40,9 @@
 		public function confirm_order($id)
 		{
 
-			// Orders::find($id)->update([
-			// 	'status' => 1
-			// ]);
+			Orders::find($id)->update([
+				'status' => 1
+			]);
 			$orders = orders::where('id', $id)->first();
 			$order_detail = order_detail::All()->where('id_oder',$id);
 			$email = $orders->getCus->email;
@@ -55,11 +55,11 @@
 				if($order_detail){
 					Mail::send('pages.client.email',$data,function($message) use ($data, $email){
 						$message->from('justbuy.bkap@gmail.com');
-						$message->to($email,'Tin nhắn hệ thống vinh loc !')->subject('Tin nhắn hệ thống vinh loc !');
+						$message->to($email,'System Message Justbuy!')->subject('System Message Justbuy!');
 					});
 					return redirect()->route('order-customer');
 				}else{
-					Mail::to($email) -> send("Đặt hàng thất bại!");
+					Mail::to($email) -> send("Order failed!");
 					$orders->delete();
 					return redirect()->route('order-customer');
 				}

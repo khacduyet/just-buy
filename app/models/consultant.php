@@ -20,11 +20,11 @@ class consultant extends Model
 				'phone' => 'required',
 			],
 			[
-				'required' => ':attribute Đang bỏ trống.',
+				'required' => ':attribute is empty.',
 			],
 			[
-                 'name' => 'Tên',
-                 'phone' => 'Số điện thoại',
+                 'name' => 'Name',
+                 'phone' => 'Phone',
 			]
 		);
 		 $models = $this->create([
